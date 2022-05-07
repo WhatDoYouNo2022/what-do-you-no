@@ -1,0 +1,9 @@
+/* Mixins Partial */
+
+@mixin fontSize($sizeValue) {
+    font-size: (calc($sizeValue/20)) * 1rem;
+}
+
+@mixin lineHeight($sizeValue) {
+    line-height: (calc($sizeValue/20)) * 1rem;
+}
