@@ -1,1 +1,5 @@
 /* Base Styles Partial */
+
+body {
+    @include resetBox;
+}
