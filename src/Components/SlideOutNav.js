@@ -3,6 +3,7 @@ import { useState } from "react";
 // Components
 import Leaderboard from "./Leaderboard.js"
 import About from "./About.js"
+
 const SlideOutNav = (props) => {
     const {
         navOpen,

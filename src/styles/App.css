@@ -287,6 +287,13 @@ ul {
   padding: 0;
 }
 
+a {
+  color: rgb(207, 255, 49);
+}
+a:visited {
+  color: rgb(207, 255, 49);
+}
+
 /* Header Specific Styles Partial */
 header {
   background-color: rgb(96, 86, 249);
@@ -332,6 +339,15 @@ header button {
 header button:active header button:hover, header button:focus {
   color: rgb(207, 255, 49);
   border-bottom: 2px solid rgb(207, 255, 49);
+}
+header .tabActive {
+  border-bottom: 2px solid rgb(207, 255, 49);
+}
+header .tabActive p {
+  color: rgb(207, 255, 49);
+}
+header .tabActive i {
+  color: rgb(207, 255, 49);
 }
 
 /* Slide Out styling partial */

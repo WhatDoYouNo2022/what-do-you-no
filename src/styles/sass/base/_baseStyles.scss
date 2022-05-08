@@ -20,3 +20,10 @@ ul {
     list-style: none;
     @include resetBox;
 }
+
+a {
+    color: $clr-limeGreen;
+    &:visited {
+        color: $clr-limeGreen
+    }
+}

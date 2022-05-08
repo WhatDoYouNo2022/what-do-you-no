@@ -1,12 +1,15 @@
 // Modules
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleInfo, faMedal, faRankingStar } from "@fortawesome/free-solid-svg-icons"
+import Leaderboard from "./Leaderboard";
 // Components
 
 const Header = (props) => {
     const { 
         handleLeaderboardClick,
-        handleAboutButtonClick
+        handleAboutButtonClick,
+        leaderboardOpen,
+        aboutOpen
     } = props;
     return (
         <header>     
@@ -14,12 +17,13 @@ const Header = (props) => {
                 <nav className="headerNav">
                     <ul className="headerNavList">
                         <li>
-                            <button onClick={handleLeaderboardClick}>
+                            <button onClick={handleLeaderboardClick} className={leaderboardOpen ? "tabActive": ""}>
                                 <FontAwesomeIcon icon={faMedal} className="leaderboardIcon" /> <p>Leaderboard</p>
                             </button>
                         </li>
                         <li>
                             <button onClick={handleAboutButtonClick}
+                            className={aboutOpen ? "tabActive" : ""}
                             >
                                 <FontAwesomeIcon icon={faCircleInfo} className="aboutIcon" /> <p>About</p>
                             </button>

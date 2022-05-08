@@ -3,13 +3,13 @@ import { useState, useEffect } from 'react'
 // Components
 import Header from "./Components/Header.js"
 import Footer from "./Components/Footer.js"
+import LeaderboardForm from './Components/LeaderboardForm.js';
 // Utilities
-import firebase from "./utils/Firebase.js"
+// import firebase from "./utils/Firebase.js"
+import firebase2 from './utils/Firebase2.js';
 // Styling
 import './styles/sass/App.scss';
 import SlideOutNav from './Components/SlideOutNav.js';
-
-
 
 function App() {
   // state variables
@@ -46,18 +46,15 @@ function App() {
     // Changes the state of the slide out depending on its current state
     if(navOpen && aboutOpen){
       // if the slide out is already open showing the about section, switch to the leaderboard view
-      console.log("switching from about to leaderboard")
         setAboutOpen(false);
         setLeaderboardOpen(true);
     } else if(!navOpen){
       // if the slide out is closed, open the slide out menu showing the leaderboard section 
-      console.log("opening leaderboard from closed slide out")
       setLeaderboardOpen(true);
       setNavOpen(true);
       setAboutOpen(false);
     } else if(leaderboardOpen){
       // if the leaderboard section is already open, close the slide out on button click
-      console.log("closing an already open leaderboard slide out")
       setNavOpen(false);
       setLeaderboardOpen(false);
       setAboutOpen(false);
@@ -68,6 +65,8 @@ function App() {
       <Header 
       handleLeaderboardClick={handleLeaderboardClick}
       handleAboutButtonClick={handleAboutButtonClick}
+      leaderboardOpen={leaderboardOpen}
+      aboutOpen={aboutOpen}
       />
       <main>
         {navOpen ? <SlideOutNav 
@@ -79,6 +78,7 @@ function App() {
         /> : null}
         <div className="wrapper">
           <h2>What Do You No?</h2>
+          <LeaderboardForm />
         </div>
       </main>
       <Footer />

@@ -36,7 +36,14 @@ header {
             color: $clr-limeGreen;
             border-bottom: 2px solid $clr-limeGreen;
         }
-
-    
+    }
+    .tabActive {
+        p {
+            color: $clr-limeGreen;
+        }
+        i {
+            color: $clr-limeGreen;
+        }
+        border-bottom: 2px solid $clr-limeGreen;
     }
 }
