@@ -5,8 +5,7 @@ import Header from "./Components/Header.js"
 import Footer from "./Components/Footer.js"
 import LeaderboardForm from './Components/LeaderboardForm.js';
 // Utilities
-// import firebase from "./utils/Firebase.js"
-import firebase2 from './utils/Firebase2.js';
+import firebase from "./utils/Firebase.js"
 // Styling
 import './styles/sass/App.scss';
 import SlideOutNav from './Components/SlideOutNav.js';

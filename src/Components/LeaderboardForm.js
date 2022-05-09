@@ -1,7 +1,7 @@
 // LeaderboardForm.js
 
 // Utilities
-import firebase2 from "../utils/Firebase2";
+import firebase from "../utils/Firebase";
 // Modules
 import { useState } from "react";
 import {getDatabase, ref, push} from "firebase/database"
@@ -16,7 +16,7 @@ const LeaderboardForm = () => {
     }
     const handleSubmit = (event) => {
         event.preventDefault();
-        const database = getDatabase(firebase2);
+        const database = getDatabase(firebase);
         const dbRef = ref(database);
         const leaderboardEntry = {
             username: userInput,

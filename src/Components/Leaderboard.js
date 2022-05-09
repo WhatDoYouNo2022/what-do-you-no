@@ -1,6 +1,6 @@
 // Leaderboard.js
 // Utilities
-import firebase2 from "../utils/Firebase2";
+import firebase from "../utils/Firebase";
 // Modules
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons"
@@ -13,7 +13,7 @@ const Leaderboard = (props) => {
     const { handleLeaderboardClick } = props;
 
     useEffect(() => {
-        const database = getDatabase(firebase2);
+        const database = getDatabase(firebase);
         const dbRef = ref(database);
         onValue(dbRef, (response) => {
             if(response.exists()){
