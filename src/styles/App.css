@@ -2,6 +2,7 @@
 /* Font Family */
 /* Font Weight */
 /* Colours*/
+/* Font Sizes */
 /* Mixins Partial */
 /* Setup Styles Partial */
 html {
@@ -244,8 +245,155 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
+h1 {
+  font-size: 40;
+}
+
+h2 {
+  font-size: 30;
+}
+
+h3 {
+  font-size: 23;
+}
+
+p {
+  font-size: 18;
+}
+
 /* Base Styles Partial */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(227, 244, 243);
+  height: 100vh;
+}
+
+.wrapper {
+  max-width: 1260px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.flexContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: rgb(207, 255, 49);
+}
+a:visited {
+  color: rgb(207, 255, 49);
+}
+
 /* Header Specific Styles Partial */
+header {
+  background-color: rgb(96, 86, 249);
+  color: rgb(255, 255, 255);
+}
+header h1 {
+  color: rgb(207, 255, 49);
+}
+header .flexContainer {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+header .headerNav {
+  width: 100%;
+}
+header .headerNavList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+header li {
+  -ms-flex-preferred-size: 32%;
+      flex-basis: 32%;
+}
+header button {
+  color: rgb(255, 255, 255);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgb(96, 86, 249);
+  border: none;
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+header button:active header button:hover, header button:focus {
+  color: rgb(207, 255, 49);
+  border-bottom: 2px solid rgb(207, 255, 49);
+}
+header .tabActive {
+  border-bottom: 2px solid rgb(207, 255, 49);
+}
+header .tabActive p {
+  color: rgb(207, 255, 49);
+}
+header .tabActive i {
+  color: rgb(207, 255, 49);
+}
+
+/* Slide Out styling partial */
+.slideOutNav {
+  position: absolute;
+  left: -100000px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+.slideOutNav .leaderboardSection {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.slideOutNav .hideMenuButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: none;
+}
+
+.slideOutOpen {
+  position: static;
+  left: 0;
+}
+
 /* Footer Specific Styles Partial */
+footer {
+  background-color: rgb(96, 86, 249);
+  color: rgb(255, 255, 255);
+}
+footer .flexContainer {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 /* Home Page Specific Styles Partial */
 /* Game Page Specific Styles Partial */

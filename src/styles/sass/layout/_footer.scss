@@ -1,1 +1,8 @@
 /* Footer Specific Styles Partial */
+footer {
+    background-color: $clr-purple;
+    color: $clr-white;
+    .flexContainer {
+        justify-content: center;
+    }
+}

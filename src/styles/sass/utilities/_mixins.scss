@@ -7,3 +7,9 @@
 @mixin lineHeight($sizeValue) {
     line-height: (calc($sizeValue/20)) * 1rem;
 }
+
+@mixin resetBox() {
+    margin: 0;
+    padding: 0;
+}
+

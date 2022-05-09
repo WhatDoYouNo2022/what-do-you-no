@@ -10,3 +10,16 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $ff-headingFont;
     font-weight: $fw-bold;
 }
+
+h1 {
+    font-size: $size-h1;
+}
+h2 {
+    font-size: $size-h2;
+}
+h3 {
+    font-size: $size-h3;
+}
+p {
+    font-size: $size-mobile-p;
+}

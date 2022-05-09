@@ -1,1 +1,49 @@
 /* Header Specific Styles Partial */
+
+header {
+    background-color: $clr-purple;
+    color: $clr-white;
+
+    h1 {
+        color: $clr-limeGreen;
+    }
+
+    .flexContainer {
+        flex-direction: column-reverse;
+    }
+    .headerNav {
+        width: 100%;
+    }
+    .headerNavList {
+        display: flex;
+        width: 100%;
+    }
+    li {
+        flex-basis: 32%;
+    }
+    button {
+        color: $clr-white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $clr-purple;
+        border: none;
+        border-bottom: 2px solid $clr-white;
+
+        &:active
+        &:hover,
+        &:focus {
+            color: $clr-limeGreen;
+            border-bottom: 2px solid $clr-limeGreen;
+        }
+    }
+    .tabActive {
+        p {
+            color: $clr-limeGreen;
+        }
+        i {
+            color: $clr-limeGreen;
+        }
+        border-bottom: 2px solid $clr-limeGreen;
+    }
+}

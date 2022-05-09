@@ -1,0 +1,29 @@
+/* Base Styles Partial */
+
+body {
+    @include resetBox;
+    background-color: $clr-lightBlue;
+    height: 100vh;
+}
+
+.wrapper {
+    max-width: 1260px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.flexContainer {
+    display: flex;
+}
+
+ul {
+    list-style: none;
+    @include resetBox;
+}
+
+a {
+    color: $clr-limeGreen;
+    &:visited {
+        color: $clr-limeGreen
+    }
+}
