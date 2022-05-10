@@ -1,13 +1,13 @@
 // Modules
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // Components
 import Header from "./Components/Header.js";
 import Footer from "./Components/Footer.js";
 import LeaderboardForm from "./Components/LeaderboardForm.js";
-import FetchData from "./Components/FetchData.js";
+import Questions from "./Components/Questions.js";
 
 // Utilities
-import firebase from "./utils/Firebase.js";
+
 // Styling
 import "./styles/sass/App.scss";
 import SlideOutNav from "./Components/SlideOutNav.js";
@@ -70,7 +70,6 @@ function App() {
         aboutOpen={aboutOpen}
       />
       <main>
-        <FetchData />
         {navOpen ? (
           <SlideOutNav
             navOpen={navOpen}
@@ -83,6 +82,7 @@ function App() {
         <div className="wrapper">
           <h2>What Do You No?</h2>
           <LeaderboardForm />
+          <Questions />
         </div>
       </main>
       <Footer />
