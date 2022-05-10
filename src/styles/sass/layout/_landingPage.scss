@@ -1,8 +1,8 @@
-/* Landing Page scss partial */
+/* Landing Page Partial */
 
 .bookCover {
-  width: 270px;
-  height: 480px;
+  width: 320px;
+  height: 550px;
   background-color: $clr-purple;
   margin: 30px auto;
   padding-top: 5px;
@@ -19,19 +19,54 @@
 
   .topPages {
     background-color: $clr-white;
-    width: 260px;
+    width: 310px;
     height: 20px;
   }
 
   .sidePages {
     background-color: $clr-white;
-    height: 475px;
+    height: 545px;
     width: 5px;
   }
 }
 
 .bookCoverContent {
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  color: $clr-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
+
+  .bookTitle {
+    @include fontSize($size-h1);
+    width: 65%;
+    @include lineHeight($height-h1);
+    margin: 40px auto 10px auto;
+  }
+
+  .bookTitleUnderline {
+    height: 5px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: $clr-limeGreen;
+  }
+
   .flexContainer {
     flex-direction: column;
   }
+}
+
+.firstEdition,
+.volumeOne,
+.junoPress {
+  @include fontSize($size-h3);
+  @include lineHeight($height-h3);
+  margin: 10px;
+}
+
+.firstEdition {
+  text-transform: uppercase;
 }

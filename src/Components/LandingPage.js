@@ -17,6 +17,7 @@ const LandingPage = (props) => {
         </div>
         <div className="bookCoverContent">
           <h2 className="bookTitle">What Do You No?</h2>
+          <div className="bookTitleUnderline"></div>
           <h3 className="firstEdition">First Edition</h3>
           <h3 className="volumeOne">Volume 1</h3>
           <div className="flexContainer">
@@ -24,11 +25,19 @@ const LandingPage = (props) => {
               className="mainMenuControls"
               onClick={handleAboutButtonClick}
             >
-              <FontAwesomeIcon icon={faChevronRight} aria-hidden="true" />
+              <FontAwesomeIcon
+                className="buttonIcon"
+                icon={faChevronRight}
+                aria-hidden="true"
+              />
               <p>Instructions</p>
             </button>
             <Link className="mainMenuControls" to="/gamepage">
-              <FontAwesomeIcon icon={faBookOpen} aria-hidden="true" />
+              <FontAwesomeIcon
+                className="buttonIcon"
+                icon={faBookOpen}
+                aria-hidden="true"
+              />
               <p>Start</p>
             </Link>
           </div>
