@@ -3,7 +3,11 @@
 // Modules
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+
 // Components
+
+//Styling
+import Image from "../assets/aboutSectionImage.jpg";
 
 const About = (props) => {
   const { handleAboutButtonClick } = props;
@@ -23,7 +27,7 @@ const About = (props) => {
             </a>
           </p>
           <img
-            src="../assets/laura-ohlman-x-VVJtAIPmk-unsplash.jpg"
+            src={Image}
             alt="Dictionaries sit on a table with an apple and a dip pen amongst foliage"
           />
           <p>

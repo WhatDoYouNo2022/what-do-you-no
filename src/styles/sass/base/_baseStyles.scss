@@ -29,21 +29,20 @@ a {
 }
 
 .mainMenuControls {
+  @include fontSize($size-desktop-p);
+  font-family: $ff-bodyFont;
+  background-color: $clr-limeGreen;
+  text-decoration: none;
+  border: 1px solid $clr-black;
+  border-radius: 5px;
+  color: $clr-black;
   height: 53px;
   width: 152px;
-  background-color: $clr-limeGreen;
-  color: $clr-black;
-  border: 1px solid $clr-black;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
-  border-radius: 5px;
-  text-decoration: none;
-  @include fontSize($size-desktop-p);
-  margin-bottom: 5px;
+  margin: 0 auto 5px auto;
   cursor: pointer;
-  font-family: $ff-bodyFont;
 
   &:visited {
     color: $clr-black;
