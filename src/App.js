@@ -21,6 +21,11 @@ function App() {
   // state of whether the about section is to be displayed.
   const [aboutOpen, setAboutOpen] = useState(false);
 
+  const [initialWords, setInitialWords] = useState(["flour", "break", "aisle", "tail", "pair", "waist", "site", "some", "ate", "son"]);
+
+  //array to store used words
+  const usedWords = [];
+
   // Event handler
 
   // Event handler for the About navigation button
@@ -82,7 +87,7 @@ function App() {
         <div className="wrapper">
           <h2>What Do You No?</h2>
           <LeaderboardForm />
-          <Questions />
+          <Questions initialWords={initialWords} setInitialWords={setInitialWords} usedWords={usedWords}/>
         </div>
       </main>
       <Footer />
