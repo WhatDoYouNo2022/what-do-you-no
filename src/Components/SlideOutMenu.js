@@ -4,9 +4,9 @@
 import Leaderboard from "./Leaderboard.js";
 import About from "./About.js";
 
-const SlideOutNav = (props) => {
+const SlideOutMenu = (props) => {
   const {
-    navOpen,
+    menuOpen,
     leaderboardOpen,
     aboutOpen,
     handleLeaderboardClick,
@@ -14,7 +14,9 @@ const SlideOutNav = (props) => {
   } = props;
 
   return (
-    <aside className={navOpen ? "slideOutNav slideOutOpen" : "slideOutNav"}>
+    <aside
+      className={menuOpen ? "slideOutMenu slideOutMenuOpen" : "slideOutMenu"}
+    >
       {leaderboardOpen ? (
         <Leaderboard handleLeaderboardClick={handleLeaderboardClick} />
       ) : aboutOpen ? (
@@ -24,4 +26,4 @@ const SlideOutNav = (props) => {
   );
 };
 
-export default SlideOutNav;
+export default SlideOutMenu;
