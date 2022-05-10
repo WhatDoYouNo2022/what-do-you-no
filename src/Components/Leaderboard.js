@@ -12,6 +12,27 @@ const Leaderboard = (props) => {
   const [dbData, setDbData] = useState([]);
   const { handleLeaderboardClick } = props;
 
+  const getRank = (leaderBoardData) => {
+    let rankNumber = 0;
+    const newRankedArray = leaderBoardData.map((individualEntry) => {
+      rankNumber++;
+      return {
+        key: individualEntry.key,
+        rank: rankNumber,
+        score: individualEntry.score,
+        username: individualEntry.username,
+      };
+    });
+    return newRankedArray;
+  };
+
+  const sortScore = (data) => {
+    const sortedScores = data.sort(
+      (firstEntry, secondEntry) => secondEntry.score - firstEntry.score
+    );
+    return getRank(sortedScores);
+  };
+
   useEffect(() => {
     const database = getDatabase(firebase);
     const dbRef = ref(database);
@@ -26,7 +47,7 @@ const Leaderboard = (props) => {
             username: dataResponse[key].username,
           });
         }
-        setDbData(leaderboardEntries);
+        setDbData(sortScore(leaderboardEntries));
       } else {
         console.log("Can't retrieve data");
       }
@@ -49,7 +70,7 @@ const Leaderboard = (props) => {
               {dbData.map((userEntry) => {
                 return (
                   <tr key={userEntry.key}>
-                    <td>1</td>
+                    <td>{userEntry.rank}</td>
                     <td>{userEntry.username}</td>
                     <td>{userEntry.score}</td>
                   </tr>
