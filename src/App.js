@@ -1,5 +1,5 @@
 // Modules
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // Components
 import Header from "./Components/Header.js";
 import Footer from "./Components/Footer.js";
@@ -7,7 +7,7 @@ import LeaderboardForm from "./Components/LeaderboardForm.js";
 import FetchData from "./Components/FetchData.js";
 
 // Utilities
-import firebase from "./utils/Firebase.js";
+
 // Styling
 import "./styles/sass/App.scss";
 import SlideOutNav from "./Components/SlideOutNav.js";
