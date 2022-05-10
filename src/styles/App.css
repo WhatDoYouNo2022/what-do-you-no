@@ -294,6 +294,11 @@ a:visited {
   color: rgb(207, 255, 49);
 }
 
+.mainMenuControls {
+  height: 53px;
+  width: 152px;
+}
+
 /* Header Specific Styles Partial */
 header {
   background-color: rgb(96, 86, 249);
@@ -351,13 +356,13 @@ header .tabActive i {
 }
 
 /* Slide Out styling partial */
-.slideOutNav {
+.slideOutMenu {
   position: absolute;
   left: -100000px;
   width: 100%;
   background-color: rgb(255, 255, 255);
 }
-.slideOutNav .leaderboardSection {
+.slideOutMenu .leaderboardSection {
   width: 100%;
   background-color: rgb(255, 255, 255);
   display: -webkit-box;
@@ -368,7 +373,7 @@ header .tabActive i {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.slideOutNav .hideMenuButton {
+.slideOutMenu .hideMenuButton {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -379,7 +384,7 @@ header .tabActive i {
   border: none;
 }
 
-.slideOutOpen {
+.slideOutMenuOpen {
   position: static;
   left: 0;
 }
@@ -397,3 +402,42 @@ footer .flexContainer {
 
 /* Home Page Specific Styles Partial */
 /* Game Page Specific Styles Partial */
+/* Landing Page scss partial */
+.bookCover {
+  width: 270px;
+  height: 480px;
+  background-color: rgb(96, 86, 249);
+  margin: 30px auto;
+  padding-top: 5px;
+  box-shadow: 15px 17px 24px -5px rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: 15px 17px 24px -5px rgba(0, 0, 0, 0.38);
+  position: relative;
+}
+
+.pagesContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: absolute;
+  right: 0;
+}
+.pagesContainer .topPages {
+  background-color: rgb(255, 255, 255);
+  width: 260px;
+  height: 20px;
+}
+.pagesContainer .sidePages {
+  background-color: rgb(255, 255, 255);
+  height: 475px;
+  width: 5px;
+}
+
+.bookCoverContent .flexContainer {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}

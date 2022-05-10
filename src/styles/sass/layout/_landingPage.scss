@@ -1,0 +1,37 @@
+/* Landing Page scss partial */
+
+.bookCover {
+  width: 270px;
+  height: 480px;
+  background-color: $clr-purple;
+  margin: 30px auto;
+  padding-top: 5px;
+  box-shadow: 15px 17px 24px -5px rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: 15px 17px 24px -5px rgba(0, 0, 0, 0.38);
+  position: relative;
+}
+
+.pagesContainer {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+
+  .topPages {
+    background-color: $clr-white;
+    width: 260px;
+    height: 20px;
+  }
+
+  .sidePages {
+    background-color: $clr-white;
+    height: 475px;
+    width: 5px;
+  }
+}
+
+.bookCoverContent {
+  .flexContainer {
+    flex-direction: column;
+  }
+}
