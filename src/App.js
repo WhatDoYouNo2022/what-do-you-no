@@ -4,7 +4,7 @@ import { useState } from "react";
 import Header from "./Components/Header.js";
 import Footer from "./Components/Footer.js";
 import LeaderboardForm from "./Components/LeaderboardForm.js";
-import Questions from "./Components/Questions.js";
+import Game from "./Components/Game.js";
 
 // Utilities
 
@@ -21,12 +21,8 @@ function App() {
   // state of whether the about section is to be displayed.
   const [aboutOpen, setAboutOpen] = useState(false);
 
-  const [initialWords, setInitialWords] = useState(["flour", "break", "aisle", "tail", "pair", "waist", "site", "some", "ate", "son"]);
-
-  //array to store used words
-  const usedWords = [];
-
-  // Event handler
+  // array to store initial list of words
+  const initialWords = ["flour", "break", "aisle", "tail", "pair", "waist", "site", "some", "ate", "son"];
 
   // Event handler for the About navigation button
   const handleAboutButtonClick = () => {
@@ -65,7 +61,8 @@ function App() {
       setLeaderboardOpen(false);
       setAboutOpen(false);
     }
-  };
+  }
+
   return (
     <div className="App">
       <Header
@@ -87,7 +84,7 @@ function App() {
         <div className="wrapper">
           <h2>What Do You No?</h2>
           <LeaderboardForm />
-          <Questions initialWords={initialWords} setInitialWords={setInitialWords} usedWords={usedWords}/>
+          <Game initialWords={initialWords} />
         </div>
       </main>
       <Footer />
