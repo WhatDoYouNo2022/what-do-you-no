@@ -1,21 +1,24 @@
 // Modules
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+
 // Components
 import Header from "./Components/Header.js";
 import Footer from "./Components/Footer.js";
 import LeaderboardForm from "./Components/LeaderboardForm.js";
 import FetchData from "./Components/FetchData.js";
+import SlideOutMenu from "./Components/SlideOutMenu.js";
+import LandingPage from "./Components/LandingPage.js";
 
 // Utilities
 
 // Styling
 import "./styles/sass/App.scss";
-import SlideOutNav from "./Components/SlideOutNav.js";
 
 function App() {
   // state variables
   // state of whether the slide out menu is open or closed
-  const [navOpen, setNavOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   // state of whether the leaderboard is to be displayed
   const [leaderboardOpen, setLeaderboardOpen] = useState(false);
   // state of whether the about section is to be displayed.
@@ -26,18 +29,18 @@ function App() {
   // Event handler for the About navigation button
   const handleAboutButtonClick = () => {
     // changes the state of the the slide out menu depending on the current state of the menu
-    if (navOpen && leaderboardOpen) {
+    if (menuOpen && leaderboardOpen) {
       // if the slide out is already open showing the leaderboard, switch to the about section view
       setLeaderboardOpen(false);
       setAboutOpen(true);
-    } else if (!navOpen) {
+    } else if (!menuOpen) {
       // if the slide out is closed, open the slide out menu showing the about section
       setAboutOpen(true);
-      setNavOpen(true);
+      setMenuOpen(true);
       setLeaderboardOpen(false);
     } else if (aboutOpen) {
       // if the about section is already open close the slide out on button click
-      setNavOpen(false);
+      setMenuOpen(false);
       setAboutOpen(false);
       setLeaderboardOpen(false);
     }
@@ -45,18 +48,18 @@ function App() {
   // Event handler for the Leaderboard navigation button
   const handleLeaderboardClick = () => {
     // Changes the state of the slide out depending on its current state
-    if (navOpen && aboutOpen) {
+    if (menuOpen && aboutOpen) {
       // if the slide out is already open showing the about section, switch to the leaderboard view
       setAboutOpen(false);
       setLeaderboardOpen(true);
-    } else if (!navOpen) {
+    } else if (!menuOpen) {
       // if the slide out is closed, open the slide out menu showing the leaderboard section
       setLeaderboardOpen(true);
-      setNavOpen(true);
+      setMenuOpen(true);
       setAboutOpen(false);
     } else if (leaderboardOpen) {
       // if the leaderboard section is already open, close the slide out on button click
-      setNavOpen(false);
+      setMenuOpen(false);
       setLeaderboardOpen(false);
       setAboutOpen(false);
     }
@@ -70,10 +73,18 @@ function App() {
         aboutOpen={aboutOpen}
       />
       <main>
-        <FetchData />
-        {navOpen ? (
-          <SlideOutNav
-            navOpen={navOpen}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <LandingPage handleAboutButtonClick={handleAboutButtonClick} />
+            }
+          />
+          <Route path="/gamepage" element={<FetchData />} />
+        </Routes>
+        {menuOpen ? (
+          <SlideOutMenu
+            menuOpen={menuOpen}
             leaderboardOpen={leaderboardOpen}
             aboutOpen={aboutOpen}
             handleLeaderboardClick={handleLeaderboardClick}
@@ -81,7 +92,6 @@ function App() {
           />
         ) : null}
         <div className="wrapper">
-          <h2>What Do You No?</h2>
           <LeaderboardForm />
         </div>
       </main>

@@ -294,6 +294,35 @@ a:visited {
   color: rgb(207, 255, 49);
 }
 
+.mainMenuControls {
+  font-size: 1rem;
+  font-family: "Lato", san-serif;
+  background-color: rgb(207, 255, 49);
+  text-decoration: none;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  height: 53px;
+  width: 152px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto 5px auto;
+  cursor: pointer;
+}
+.mainMenuControls:visited {
+  color: rgb(0, 0, 0);
+}
+.mainMenuControls .buttonIcon {
+  padding: 0 10px;
+}
+
 /* Header Specific Styles Partial */
 header {
   background-color: rgb(96, 86, 249);
@@ -351,13 +380,13 @@ header .tabActive i {
 }
 
 /* Slide Out styling partial */
-.slideOutNav {
+.slideOutMenu {
   position: absolute;
   left: -100000px;
   width: 100%;
   background-color: rgb(255, 255, 255);
 }
-.slideOutNav .leaderboardSection {
+.slideOutMenu .leaderboardSection {
   width: 100%;
   background-color: rgb(255, 255, 255);
   display: -webkit-box;
@@ -368,7 +397,7 @@ header .tabActive i {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.slideOutNav .hideMenuButton {
+.slideOutMenu .hideMenuButton {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -379,7 +408,7 @@ header .tabActive i {
   border: none;
 }
 
-.slideOutOpen {
+.slideOutMenuOpen {
   position: static;
   left: 0;
 }
@@ -397,3 +426,83 @@ footer .flexContainer {
 
 /* Home Page Specific Styles Partial */
 /* Game Page Specific Styles Partial */
+/* Landing Page Partial */
+.bookCover {
+  width: 320px;
+  height: 550px;
+  background-color: rgb(96, 86, 249);
+  margin: 30px auto;
+  padding-top: 5px;
+  box-shadow: 15px 17px 24px -5px rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: 15px 17px 24px -5px rgba(0, 0, 0, 0.38);
+  position: relative;
+}
+
+.pagesContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: absolute;
+  right: 0;
+}
+.pagesContainer .topPages {
+  background-color: rgb(255, 255, 255);
+  width: 310px;
+  height: 20px;
+}
+.pagesContainer .sidePages {
+  background-color: rgb(255, 255, 255);
+  height: 545px;
+  width: 5px;
+}
+
+.bookCoverContent {
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 25px;
+}
+.bookCoverContent .bookTitle {
+  font-size: 2rem;
+  width: 65%;
+  line-height: 3rem;
+  margin: 40px auto 10px auto;
+}
+.bookCoverContent .bookTitleUnderline {
+  height: 5px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgb(207, 255, 49);
+}
+.bookCoverContent .flexContainer {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.firstEdition,
+.volumeOne,
+.junoPress {
+  font-size: 1.15rem;
+  line-height: 1.725rem;
+  margin: 10px;
+}
+
+.firstEdition {
+  text-transform: uppercase;
+}

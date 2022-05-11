@@ -5,7 +5,7 @@ import firebase from "../utils/Firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
-import { getDatabase, push, onValue, ref } from "firebase/database";
+import { getDatabase, onValue, ref } from "firebase/database";
 // Components
 
 const Leaderboard = (props) => {
@@ -81,7 +81,11 @@ const Leaderboard = (props) => {
         </div>
         <div className="lowerMenu">
           <button onClick={handleLeaderboardClick} className="hideMenuButton">
-            <FontAwesomeIcon icon={faCircleXmark} className="hideMenuIcon" />
+            <FontAwesomeIcon
+              icon={faCircleXmark}
+              className="hideMenuIcon"
+              aria-hidden="true"
+            />
             <p>Hide Menu</p>
           </button>
         </div>

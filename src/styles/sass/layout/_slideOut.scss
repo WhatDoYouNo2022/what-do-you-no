@@ -1,27 +1,27 @@
 /* Slide Out styling partial */
 
-.slideOutNav {
-    position: absolute;
-    left: -100000px;
+.slideOutMenu {
+  position: absolute;
+  left: -100000px;
+  width: 100%;
+  background-color: $clr-white;
+
+  .leaderboardSection {
     width: 100%;
     background-color: $clr-white;
+    display: flex;
+    flex-direction: column;
+  }
 
-    .leaderboardSection {
-        width: 100%;        
-        background-color: $clr-white;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .hideMenuButton {
-        display: flex;
-        align-items: center;
-        background-color: $clr-white;
-        border: none;
-    }
+  .hideMenuButton {
+    display: flex;
+    align-items: center;
+    background-color: $clr-white;
+    border: none;
+  }
 }
 
-.slideOutOpen {
-    position: static;
-    left: 0;
+.slideOutMenuOpen {
+  position: static;
+  left: 0;
 }
