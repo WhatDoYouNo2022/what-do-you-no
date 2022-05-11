@@ -6,7 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./Components/Header.js";
 import Footer from "./Components/Footer.js";
 import LeaderboardForm from "./Components/LeaderboardForm.js";
-import FetchData from "./Components/FetchData.js";
+import Game from "./Components/Game.js";
 import SlideOutMenu from "./Components/SlideOutMenu.js";
 import LandingPage from "./Components/LandingPage.js";
 
@@ -24,7 +24,8 @@ function App() {
   // state of whether the about section is to be displayed.
   const [aboutOpen, setAboutOpen] = useState(false);
 
-  // Event handler
+  // array to store initial list of words
+  const initialWords = ["flour", "break", "aisle", "tail", "pair", "waist", "site", "some", "ate", "son"];
 
   // Event handler for the About navigation button
   const handleAboutButtonClick = () => {
@@ -63,7 +64,8 @@ function App() {
       setLeaderboardOpen(false);
       setAboutOpen(false);
     }
-  };
+  }
+
   return (
     <div className="App">
       <Header
@@ -80,7 +82,7 @@ function App() {
               <LandingPage handleAboutButtonClick={handleAboutButtonClick} />
             }
           />
-          <Route path="/gamepage" element={<FetchData />} />
+          <Route path="/gamepage" element={<Game />} />
         </Routes>
         {menuOpen ? (
           <SlideOutMenu
@@ -93,6 +95,7 @@ function App() {
         ) : null}
         <div className="wrapper">
           <LeaderboardForm />
+          <Game initialWords={initialWords} />
         </div>
       </main>
       <Footer />
