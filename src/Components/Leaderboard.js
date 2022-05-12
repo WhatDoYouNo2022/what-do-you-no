@@ -12,30 +12,46 @@ const Leaderboard = (props) => {
   const [dbData, setDbData] = useState([]);
   const { handleLeaderboardClick } = props;
 
+  // Create a function that takes the leaderboard entries, already sorted by score and attaches a rank number to each entry.
   const getRank = (leaderBoardData) => {
-    let rankNumber = 0;
-    const newRankedArray = leaderBoardData.map((individualEntry) => {
-      rankNumber++;
+    // set the initial rank to start at 1
+    let rankNumber = 1;
+    // map over the score sorted array and return a new one with ranks added
+    const newRankedArray = leaderBoardData.map((currentEntry, index, array) => {
+      // if we are not on the first entry in the array
+      if(index > 0){
+        // Get the previous entry object
+        const previousEntry = array[index - 1]
+        // If the current entry's score is equal to the previous entry's score, make the rank equivalent
+        if(previousEntry.score === currentEntry.score){
+          currentEntry.rank = previousEntry.rank
+        } else {
+          // Because our scores are already sorted, if the previous entry's score is not equal to the current entry's score, give the current entry a higher ranking
+          rankNumber++
+          currentEntry.rank = rankNumber;
+        }
+      }
+      // return a new object in the array of leaderboard entries with the rank included.
       return {
-        key: individualEntry.key,
+        key: currentEntry.key,
         rank: rankNumber,
-        score: individualEntry.score,
-        username: individualEntry.username,
+        score: currentEntry.score,
+        username: currentEntry.username,
       };
     });
+    // return a new array of leaderboard entries with the ranks included.
     return newRankedArray;
-  };
-
-  const sortScore = (data) => {
-    const sortedScores = data.sort(
-      (firstEntry, secondEntry) => secondEntry.score - firstEntry.score
-    );
-    return getRank(sortedScores);
   };
 
   useEffect(() => {
     const database = getDatabase(firebase);
     const dbRef = ref(database);
+    const sortScore = (data) => {
+          const sortedScores = data.sort(
+            (firstEntry, secondEntry) => secondEntry.score - firstEntry.score
+          );
+          return getRank(sortedScores);
+    };
     onValue(dbRef, (response) => {
       if (response.exists()) {
         let dataResponse = response.val();
@@ -47,7 +63,8 @@ const Leaderboard = (props) => {
             username: dataResponse[key].username,
           });
         }
-        setDbData(sortScore(leaderboardEntries));
+        const sortedData = sortScore(leaderboardEntries);
+        setDbData(sortedData);
       } else {
         console.log("Can't retrieve data");
       }
