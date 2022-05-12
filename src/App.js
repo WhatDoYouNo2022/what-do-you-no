@@ -24,8 +24,12 @@ function App() {
   // state of whether the about section is to be displayed.
   const [aboutOpen, setAboutOpen] = useState(false);
 
+  
+
   // array to store initial list of words
-  const initialWords = ["flour", "break", "aisle", "tail", "pair", "waist", "site", "some", "ate", "son"];
+  const initialWords = ["flour", "break", "aisle", "tail", "maid", "waist", "pray", "some", "ate", "son"];
+
+  
 
   // Event handler for the About navigation button
   const handleAboutButtonClick = () => {
@@ -65,6 +69,8 @@ function App() {
       setAboutOpen(false);
     }
   }
+
+  
 
   return (
     <div className="App">

@@ -11,9 +11,9 @@ const QuestionsDisplay = (props) => {
         handleChange,
         handleNextQuestion,
         userAnswer,
+        score,
+        setScore
     } = props;
-
-    const [score, setScore] = useState(0);
 
     let homophone;
 
@@ -41,7 +41,6 @@ const QuestionsDisplay = (props) => {
     return (
         <div className="App">
             <h2>Question {questionNumber}:</h2>
-            <p>Score: {score} </p>
             {data.map((item, index) => {
                 homophone = item.word;
                 return (

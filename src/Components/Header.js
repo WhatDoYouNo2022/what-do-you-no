@@ -15,6 +15,7 @@ const Header = (props) => {
     leaderboardOpen,
     aboutOpen,
   } = props;
+  
   return (
     <header>
       <div className="wrapper flexContainer">
@@ -45,16 +46,6 @@ const Header = (props) => {
                 />
                 <p>About</p>
               </button>
-            </li>
-            <li>
-              <h2>
-                <FontAwesomeIcon
-                  icon={faRankingStar}
-                  className="scoreIcon"
-                  aria-hidden="true"
-                />
-                Score:
-              </h2>
             </li>
           </ul>
         </nav>
