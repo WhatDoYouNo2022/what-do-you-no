@@ -9,7 +9,9 @@ import { getDatabase, onValue, ref } from "firebase/database";
 // Components
 
 const Leaderboard = (props) => {
-  const [dbData, setDbData] = useState([]);
+  const [ dbData, setDbData ] = useState([]);
+  const [ dbDataRetrieved, setDbDataRetrieved ] = useState(false);
+  const [ loadingData, setLoadingData ] = useState(true);
   const { handleLeaderboardClick } = props;
 
   // Create a function that takes the leaderboard entries, already sorted by score and attaches a rank number to each entry.
@@ -54,6 +56,8 @@ const Leaderboard = (props) => {
     };
     onValue(dbRef, (response) => {
       if (response.exists()) {
+        setDbDataRetrieved(true);
+        setLoadingData(false);
         let dataResponse = response.val();
         const leaderboardEntries = [];
         for (let key in dataResponse) {
@@ -66,7 +70,7 @@ const Leaderboard = (props) => {
         const sortedData = sortScore(leaderboardEntries);
         setDbData(sortedData);
       } else {
-        console.log("Can't retrieve data");
+        setLoadingData(false);
       }
     });
   }, []);
@@ -75,26 +79,43 @@ const Leaderboard = (props) => {
     <section className="leaderboardSection" id="leaderboard">
       <div className="wrapper">
         <div className="leaderTopMenu">
-          <table>
-            <thead>
-              <tr>
-                <th>Rank</th>
-                <th>Name</th>
-                <th>Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              {dbData.map((userEntry) => {
-                return (
-                  <tr key={userEntry.key}>
-                    <td>{userEntry.rank}</td>
-                    <td>{userEntry.username}</td>
-                    <td>{userEntry.score}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          {/* If the data has not yet been retrieved and we don't know if we will be able to get it, display the loading message. */}
+          {
+            loadingData ?
+            <>
+              <h2>Loading..</h2>
+              <p>Loading the latest leaderboard, this won't take long.</p>
+            </>
+            // If we can successfully retrieve the data for the leaderboard, display the leaderboard 
+            : dbDataRetrieved & !loadingData ? 
+            <table>
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Name</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dbData.map((userEntry) => {
+                  return (
+                    <tr key={userEntry.key}>
+                      <td>{userEntry.rank}</td>
+                      <td>{userEntry.username}</td>
+                      <td>{userEntry.score}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+            // Otherwise if the data can't be retrieved and we are not loading it, display an error message.
+            :
+            <>
+              <h2>Error:</h2>
+              <p>Sorry we are having trouble reaching our database right now. Try again later.</p>
+            </>
+          }
+
         </div>
         <div className="lowerMenu">
           <button onClick={handleLeaderboardClick} className="hideMenuButton">
