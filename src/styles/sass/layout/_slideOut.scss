@@ -11,6 +11,12 @@
     background-color: $clr-white;
     display: flex;
     flex-direction: column;
+
+  }
+  .leaderTopMenu {
+    max-height: 365px;
+    max-width: 350px;
+    overflow-y: auto;
   }
 
   .hideMenuButton {

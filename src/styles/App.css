@@ -397,6 +397,11 @@ header .tabActive i {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.slideOutMenu .leaderTopMenu {
+  max-height: 365px;
+  max-width: 350px;
+  overflow-y: auto;
+}
 .slideOutMenu .hideMenuButton {
   display: -webkit-box;
   display: -ms-flexbox;
