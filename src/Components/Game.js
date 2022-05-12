@@ -117,24 +117,31 @@ const Game = (props) => {
   return (
     <div>
       <Score score={score} setScore={setScore} scoreDenominator={scoreDenominator} />
-      { isGameOver ? <GameOverDisplay scoreSubmitted={scoreSubmitted} setScoreSubmitted={setScoreSubmitted}/> : 
-      <QuestionsDisplay 
-        questionNumber={questionNumber}
-        data={data}
-        homophone={homophone}
-        handleUserAnswerSelection={handleUserAnswerSelection}
-        randomWord={randomWord}
-        wordOneChecked={wordOneChecked}
-        wordTwoChecked={wordTwoChecked}
-        handleChange={handleChange}
-        handleNextQuestion={handleNextQuestion}
-        userAnswer={userAnswer}
-        score={score}
-        setScore={setScore}
-        setScoreDenominator={setScoreDenominator}
-        scoreDenominator={scoreDenominator}
-        randomQuestionPosition={randomQuestionPosition}
-      /> }
+      { isGameOver ? 
+        <GameOverDisplay 
+          scoreSubmitted={scoreSubmitted} 
+          setScoreSubmitted={setScoreSubmitted}
+          score={score}
+        /> 
+        : 
+        <QuestionsDisplay 
+          questionNumber={questionNumber}
+          data={data}
+          homophone={homophone}
+          handleUserAnswerSelection={handleUserAnswerSelection}
+          randomWord={randomWord}
+          wordOneChecked={wordOneChecked}
+          wordTwoChecked={wordTwoChecked}
+          handleChange={handleChange}
+          handleNextQuestion={handleNextQuestion}
+          userAnswer={userAnswer}
+          score={score}
+          setScore={setScore}
+          setScoreDenominator={setScoreDenominator}
+          scoreDenominator={scoreDenominator}
+          randomQuestionPosition={randomQuestionPosition}
+        /> 
+      }
       
     </div>
   );

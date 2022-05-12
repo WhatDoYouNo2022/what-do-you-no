@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleInfo,
   faMedal,
-  faRankingStar,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Components

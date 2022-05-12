@@ -7,7 +7,11 @@ import { useState } from "react";
 import {getDatabase, ref, push} from "firebase/database"
 
 const LeaderboardForm = (props) => {
-    const { setScoreSubmitted } = props;
+    const { 
+        setScoreSubmitted,
+        score, 
+        setUsernameDeclined
+    } = props;
 
     const [userInput, setUserInput] = useState("")
 
@@ -19,9 +23,30 @@ const LeaderboardForm = (props) => {
         event.preventDefault();
         const database = getDatabase(firebase);
         const dbRef = ref(database);
+        if(userInput.trim() === ""){
+            alert("Oops! Please enter a username to submit your score.")
+            setUserInput("")
+        } else if(userInput.trim()[0] === "<"){
+            alert(`Sorry, usernames can't begin with a "<" character, please try a different username.`)
+        } else {
+            const leaderboardEntry = {
+                username: userInput,
+                score: score
+            }
+            push(dbRef, leaderboardEntry)
+            setUserInput("")
+            setScoreSubmitted((prevState) => {
+                return true;
+            })
+        }
+    }
+    const handleAnonSubmit = (event) => {
+        event.preventDefault();
+        const database = getDatabase(firebase);
+        const dbRef = ref(database);
         const leaderboardEntry = {
-            username: userInput,
-            score: (Math.floor(Math.random() * 10))
+            username: "Anonymous",
+            score: score
         }
         push(dbRef, leaderboardEntry)
         setUserInput("")
@@ -29,12 +54,17 @@ const LeaderboardForm = (props) => {
             return true;
         })
     }
+    const handleDeclineSubmit = () => {
+        setUsernameDeclined((true))
+    }
 
     return (
-        <form onSubmit={handleSubmit} type="submit">
-            <label name="leaderboardForm" htmlFor="userNameInput">Please enter a name for the Leaderboard</label>
+        <form>
+            <label name="leaderboardForm" htmlFor="userNameInput">Please enter a username for the Leaderboard. Caution: your username will be visible to all users.</label>
             <input onChange={handleUserInput} value={userInput} name="leaderboardForm" type="text" id="usernameInput" placeholder="Please enter a leaderboard name"/>
-            <button type="submit">Submit score</button>
+            <button onClick={handleSubmit} type="submit">Submit score</button>
+            <button onClick={handleAnonSubmit}>Submit Anonymous Score</button>
+            <button onClick={handleDeclineSubmit}>No, thank you!</button>
         </form>
     )
 }
