@@ -55,9 +55,6 @@ const LeaderboardForm = (props) => {
         })
     }
     const handleDeclineSubmit = () => {
-        // setScoreSubmitted((prevState) => {
-        //     return true;
-        // })
         setUsernameDeclined((true))
     }
 
