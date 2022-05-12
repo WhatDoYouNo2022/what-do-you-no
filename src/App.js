@@ -5,7 +5,6 @@ import { Route, Routes } from "react-router-dom";
 // Components
 import Header from "./Components/Header.js";
 import Footer from "./Components/Footer.js";
-import LeaderboardForm from "./Components/LeaderboardForm.js";
 import Game from "./Components/Game.js";
 import SlideOutMenu from "./Components/SlideOutMenu.js";
 import LandingPage from "./Components/LandingPage.js";
@@ -24,8 +23,12 @@ function App() {
   // state of whether the about section is to be displayed.
   const [aboutOpen, setAboutOpen] = useState(false);
 
+  
+
   // array to store initial list of words
-  const initialWords = ["flour", "break", "aisle", "tail", "pair", "waist", "site", "some", "ate", "son"];
+  const initialWords = ["flour", "break", "aisle", "tail", "maid", "waist", "pray", "some", "ate", "son"];
+
+  
 
   // Event handler for the About navigation button
   const handleAboutButtonClick = () => {
@@ -66,6 +69,8 @@ function App() {
     }
   }
 
+  
+
   return (
     <div className="App">
       <Header
@@ -94,7 +99,6 @@ function App() {
           />
         ) : null}
         <div className="wrapper">
-          <LeaderboardForm />
           <Game initialWords={initialWords} />
         </div>
       </main>

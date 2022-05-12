@@ -6,7 +6,8 @@ import firebase from "../utils/Firebase";
 import { useState } from "react";
 import {getDatabase, ref, push} from "firebase/database"
 
-const LeaderboardForm = () => {
+const LeaderboardForm = (props) => {
+    const { setScoreSubmitted } = props;
 
     const [userInput, setUserInput] = useState("")
 
@@ -24,6 +25,9 @@ const LeaderboardForm = () => {
         }
         push(dbRef, leaderboardEntry)
         setUserInput("")
+        setScoreSubmitted((prevState) => {
+            return true;
+        })
     }
 
     return (

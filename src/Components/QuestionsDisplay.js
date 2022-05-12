@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 const QuestionsDisplay = (props) => {
     const {
@@ -11,9 +11,8 @@ const QuestionsDisplay = (props) => {
         handleChange,
         handleNextQuestion,
         userAnswer,
+        setScore
     } = props;
-
-    const [score, setScore] = useState(0);
 
     let homophone;
 
@@ -41,12 +40,12 @@ const QuestionsDisplay = (props) => {
     return (
         <div className="App">
             <h2>Question {questionNumber}:</h2>
-            <p>Score: {score} </p>
             {data.map((item, index) => {
                 homophone = item.word;
                 return (
                     <div key={index}>
                         <p>{item.defs[0]}</p>
+                        {console.log(item.defs[0])}
                         <form action="#">
                             <fieldset onChange={(event) => handleUserAnswerSelection(event)}>
                                 <legend>Click on the word that matches the definition</legend>
@@ -64,5 +63,5 @@ const QuestionsDisplay = (props) => {
     )
 }
 
-export default QuestionsDisplay
+export default QuestionsDisplay;
 

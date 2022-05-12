@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import GameOverDisplay from "./GameOverDisplay";
 import QuestionsDisplay from "./QuestionsDisplay";
+import Score from "./Score";
 
 const Game = (props) => {
   //Examples of Homophone Pairs https://www.englishclub.com/pronunciation/homophones-list.htm
@@ -23,7 +24,10 @@ const Game = (props) => {
   const [wordTwoChecked, setWordTwoChecked] = useState(false);
   
   const [isGameOver, setIsGameOver] = useState(false);
- 
+
+  const [score, setScore] = useState(0);
+
+  const [scoreSubmitted, setScoreSubmitted] = useState(false);
   
   //store homophone generated from API
   let homophone;
@@ -59,7 +63,6 @@ const Game = (props) => {
   }
 
   //Choose random word from words array function
- 
   useEffect(() => {
     createRandomWord();
   }, []);
@@ -105,7 +108,8 @@ const Game = (props) => {
 
   return (
     <div>
-      { isGameOver ? <GameOverDisplay /> : 
+      <Score score={score} setScore={setScore} />
+      { isGameOver ? <GameOverDisplay scoreSubmitted={scoreSubmitted} setScoreSubmitted={setScoreSubmitted}/> : 
       <QuestionsDisplay 
         questionNumber={questionNumber}
         data={data}
@@ -117,6 +121,8 @@ const Game = (props) => {
         handleChange={handleChange}
         handleNextQuestion={handleNextQuestion}
         userAnswer={userAnswer}
+        score={score}
+        setScore={setScore}
       /> }
       
     </div>
