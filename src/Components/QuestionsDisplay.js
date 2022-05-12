@@ -13,7 +13,8 @@ const QuestionsDisplay = (props) => {
         userAnswer,
         setScore,
         setScoreDenominator,
-        scoreDenominator
+        scoreDenominator, 
+        randomQuestionPosition
     } = props;
 
     let homophone;
@@ -75,10 +76,10 @@ const QuestionsDisplay = (props) => {
                         <form action="#">
                             <fieldset onChange={(event) => handleUserAnswerSelection(event)}>
                                 <legend>Click on the word that matches the definition</legend>
-                                <label htmlFor="wordOne">{randomWord}</label>
-                                <input type="radio" id="wordOne" name="homophone" value={randomWord} checked={wordOneChecked} onChange={(event) => handleChange(event)} />
-                                <label htmlFor="wordTwo">{item.word}</label>
-                                <input type="radio" id="wordTwo" name="homophone" value={item.word} checked={wordTwoChecked} onChange={(event) => handleChange(event)} />
+                                <label htmlFor="wordOne">{randomQuestionPosition === 1 ? randomWord : item.word}</label>
+                                <input type="radio" id="wordOne" name="homophone" value={randomQuestionPosition === 1 ? randomWord : item.word} checked={wordOneChecked} onChange={(event) => handleChange(event)} />
+                                <label htmlFor="wordTwo">{randomQuestionPosition === 1 ? item.word : randomWord}</label>
+                                <input type="radio" id="wordTwo" name="homophone" value={randomQuestionPosition === 1 ? item.word : randomWord} checked={wordTwoChecked} onChange={(event) => handleChange(event)} />
                             </fieldset>
                         </form>
                         <button onClick={handleNextQuestion}>Next</button>

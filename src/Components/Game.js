@@ -30,6 +30,8 @@ const Game = (props) => {
   const [score, setScore] = useState(0);
 
   const [scoreSubmitted, setScoreSubmitted] = useState(false);
+
+  const [randomQuestionPosition, setRandomQuestionPosition] = useState(1);
   
   //store homophone generated from API
   let homophone;
@@ -87,6 +89,10 @@ const Game = (props) => {
     // check to see there are unused words remaining (game to continue)
     if (initialWords.length > 0) {
       if (wordOneChecked || wordTwoChecked) {
+        // randomly generates position index for correct answer location
+        setRandomQuestionPosition((prevState) => {
+          return Math.floor((Math.random() * 2) + 1)
+        })
         //run API call
         createRandomWord();
         //increase question number
@@ -127,6 +133,7 @@ const Game = (props) => {
         setScore={setScore}
         setScoreDenominator={setScoreDenominator}
         scoreDenominator={scoreDenominator}
+        randomQuestionPosition={randomQuestionPosition}
       /> }
       
     </div>
