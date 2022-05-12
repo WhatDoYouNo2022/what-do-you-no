@@ -108,7 +108,7 @@ const Game = (props) => {
 
   return (
     <div>
-      <Score score={score} setScore={setScore} />
+      <Score score={score} setScore={setScore} questionNumber={questionNumber}/>
       { isGameOver ? <GameOverDisplay scoreSubmitted={scoreSubmitted} setScoreSubmitted={setScoreSubmitted}/> : 
       <QuestionsDisplay 
         questionNumber={questionNumber}

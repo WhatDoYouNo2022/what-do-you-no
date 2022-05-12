@@ -16,6 +16,10 @@ const QuestionsDisplay = (props) => {
 
     let homophone;
 
+    let wordType;
+    let definition;
+
+
     const correctAnswerChecker = () => {
         // Logic to check if answer is correct or not
         console.log("user answer", userAnswer);
@@ -37,6 +41,24 @@ const QuestionsDisplay = (props) => {
         correctAnswerChecker();
     }, [userAnswer])
 
+    const evaluateWordType = (item) => {
+        const wordTypeSymbol = item.defs[0].split("\t")[0];
+        
+        definition = item.defs[0].substring(item.defs[0].indexOf("\t"));
+        
+        if (wordTypeSymbol === "n") {
+            wordType = "noun"
+        } else if (wordTypeSymbol === "v") {
+            wordType = "verb"
+        } else if (wordTypeSymbol === "adj") {
+            wordType = "adjective"
+        } else if (wordTypeSymbol === "adv") {
+            wordType = "adverb"
+        } else {
+            return null;
+        }
+    }
+
     return (
         <div className="App">
             <h2>Question {questionNumber}:</h2>
@@ -44,8 +66,8 @@ const QuestionsDisplay = (props) => {
                 homophone = item.word;
                 return (
                     <div key={index}>
-                        <p>{item.defs[0]}</p>
-                        {console.log(item.defs[0])}
+                        {evaluateWordType(item)}
+                        <p><em>{wordType} - </em>{definition}</p>
                         <form action="#">
                             <fieldset onChange={(event) => handleUserAnswerSelection(event)}>
                                 <legend>Click on the word that matches the definition</legend>

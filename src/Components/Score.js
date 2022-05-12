@@ -6,7 +6,7 @@ import {
 
 const Score = (props) => {
 
-    const { score } = props
+    const { score, questionNumber } = props
 
     return (
         <h2>
@@ -15,7 +15,7 @@ const Score = (props) => {
                 className="scoreIcon"
                 aria-hidden="true"
             />
-            Score: {score}
+            Score: {score} / {questionNumber}
         </h2>
     )
 
