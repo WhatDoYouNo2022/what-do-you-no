@@ -1,12 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faRankingStar,
-} from "@fortawesome/free-solid-svg-icons";
+import { faRankingStar } from "@fortawesome/free-solid-svg-icons";
 
 
 const Score = (props) => {
 
-    const { score, questionNumber } = props
+    const { score, scoreDenominator } = props
 
     return (
         <h2>
@@ -15,10 +13,10 @@ const Score = (props) => {
                 className="scoreIcon"
                 aria-hidden="true"
             />
-            Score: {score} / {questionNumber}
+            Score: {score} / {scoreDenominator}
         </h2>
     )
 
 }
 
-export default Score
+export default Score;

@@ -18,6 +18,8 @@ const Game = (props) => {
   const [userAnswer, setUserAnswer] = useState("");
   
   const [questionNumber, setQuestionNumber] = useState(1);
+
+  const [scoreDenominator, setScoreDenominator] = useState(-1);
   
   const [wordOneChecked, setWordOneChecked] = useState(false);
   
@@ -108,7 +110,7 @@ const Game = (props) => {
 
   return (
     <div>
-      <Score score={score} setScore={setScore} questionNumber={questionNumber}/>
+      <Score score={score} setScore={setScore} scoreDenominator={scoreDenominator} />
       { isGameOver ? <GameOverDisplay scoreSubmitted={scoreSubmitted} setScoreSubmitted={setScoreSubmitted}/> : 
       <QuestionsDisplay 
         questionNumber={questionNumber}
@@ -123,6 +125,8 @@ const Game = (props) => {
         userAnswer={userAnswer}
         score={score}
         setScore={setScore}
+        setScoreDenominator={setScoreDenominator}
+        scoreDenominator={scoreDenominator}
       /> }
       
     </div>

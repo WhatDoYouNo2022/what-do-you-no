@@ -11,7 +11,9 @@ const QuestionsDisplay = (props) => {
         handleChange,
         handleNextQuestion,
         userAnswer,
-        setScore
+        setScore,
+        setScoreDenominator,
+        scoreDenominator
     } = props;
 
     let homophone;
@@ -35,6 +37,8 @@ const QuestionsDisplay = (props) => {
         } else {
             console.log("Incorrect");
         }
+
+        setScoreDenominator(scoreDenominator + 1)
     }
 
     useEffect(() => {
