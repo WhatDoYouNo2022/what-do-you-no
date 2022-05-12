@@ -7,7 +7,7 @@ import Score from "./Score";
 const Game = (props) => {
   //Examples of Homophone Pairs https://www.englishclub.com/pronunciation/homophones-list.htm
   
-  const { initialWords} = props;
+  const { initialWords } = props;
 
   //store data from API
   const [data, setData] = useState([]);
