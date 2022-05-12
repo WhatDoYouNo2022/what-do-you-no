@@ -26,7 +26,8 @@ const Game = (props) => {
   const [isGameOver, setIsGameOver] = useState(false);
 
   const [score, setScore] = useState(0);
- 
+
+  const [scoreSubmitted, setScoreSubmitted] = useState(false);
   
   //store homophone generated from API
   let homophone;
@@ -108,7 +109,7 @@ const Game = (props) => {
   return (
     <div>
       <Score score={score} setScore={setScore} />
-      { isGameOver ? <GameOverDisplay /> : 
+      { isGameOver ? <GameOverDisplay scoreSubmitted={scoreSubmitted} setScoreSubmitted={setScoreSubmitted}/> : 
       <QuestionsDisplay 
         questionNumber={questionNumber}
         data={data}

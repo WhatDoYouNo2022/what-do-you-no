@@ -5,7 +5,6 @@ import { Route, Routes } from "react-router-dom";
 // Components
 import Header from "./Components/Header.js";
 import Footer from "./Components/Footer.js";
-import LeaderboardForm from "./Components/LeaderboardForm.js";
 import Game from "./Components/Game.js";
 import SlideOutMenu from "./Components/SlideOutMenu.js";
 import LandingPage from "./Components/LandingPage.js";
@@ -100,7 +99,6 @@ function App() {
           />
         ) : null}
         <div className="wrapper">
-          <LeaderboardForm />
           <Game initialWords={initialWords} />
         </div>
       </main>
