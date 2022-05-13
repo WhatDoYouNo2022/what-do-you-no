@@ -431,6 +431,35 @@ footer .flexContainer {
 
 /* Home Page Specific Styles Partial */
 /* Game Page Specific Styles Partial */
+.progress-bar {
+  background: rgb(96, 86, 249);
+  width: 80%;
+  height: 50px;
+}
+.progress-bar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.green-progress-icon {
+  color: rgb(207, 255, 49);
+}
+
+.red-progress-icon {
+  color: rgb(214, 69, 65);
+}
+
+.white-progress-icon {
+  color: rgb(255, 255, 255);
+}
+
 /* Landing Page Partial */
 .bookCover {
   width: 320px;

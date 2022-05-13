@@ -3,11 +3,13 @@ import axios from "axios";
 import GameOverDisplay from "./GameOverDisplay";
 import QuestionsDisplay from "./QuestionsDisplay";
 import Score from "./Score";
+import ProgressBar from "./ProgressBar";
+import { faBook, faBookOpen } from "@fortawesome/free-solid-svg-icons";
 
 const Game = (props) => {
   //Examples of Homophone Pairs https://www.englishclub.com/pronunciation/homophones-list.htm
   
-  const { initialWords } = props;
+  const { initialWords, updatedIconsColourArray } = props;
 
   //store data from API
   const [data, setData] = useState([]);
@@ -32,6 +34,15 @@ const Game = (props) => {
   const [scoreSubmitted, setScoreSubmitted] = useState(false);
 
   const [randomQuestionPosition, setRandomQuestionPosition] = useState(1);
+
+  // array to store initial progress bar icons
+  const [progressBarIconArray, setProgressBarIconArray] = useState([faBookOpen, faBook, faBook, faBook, faBook, faBook, faBook, faBook, faBook, faBook]);
+
+  // array to store icon classes
+  const [progressBarIconColourArray, setProgressBarIconColourArray] = useState(['white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon']);
+
+  let updatedIconsArray = [];
+  
   
   //store homophone generated from API
   let homophone;
@@ -62,7 +73,6 @@ const Game = (props) => {
       const randomIndex = Math.floor(Math.random() * initialWords.length);
       const randomlyGeneratedWord = initialWords[randomIndex];
       initialWords.splice(randomIndex, 1)
-      console.log(initialWords);
       setRandomWord(randomlyGeneratedWord);      
   }
 
@@ -100,14 +110,33 @@ const Game = (props) => {
         //reset radio buttons
         setWordOneChecked(false);
         setWordTwoChecked(false);
+
+        handleIconUpdate();
+
       } else {
         alert("Please select a word")
       }
+
     } else {
+      handleIconUpdate();
       setIsGameOver(prevState => {
         return true;
-      });      
+      });   
     }
+  }
+
+  const handleIconUpdate = () => {
+    progressBarIconArray.map((item, index) => {
+      if (index <= questionNumber) {
+        updatedIconsArray.push(faBookOpen)
+      } else {
+        updatedIconsArray.push(faBook);
+      }
+    })
+
+    setProgressBarIconArray((prevState) => {
+      return updatedIconsArray;
+    })
   }
 
   const handleChange = (event) => {
@@ -116,7 +145,16 @@ const Game = (props) => {
 
   return (
     <div>
-      <Score score={score} setScore={setScore} scoreDenominator={scoreDenominator} />
+      <Score 
+        score={score} 
+        setScore={setScore} 
+        scoreDenominator={scoreDenominator} 
+      />
+      <ProgressBar
+        questionNumber={questionNumber}
+        progressBarIconArray={progressBarIconArray}
+        progressBarIconColourArray={progressBarIconColourArray}
+      />
       { isGameOver ? 
         <GameOverDisplay 
           scoreSubmitted={scoreSubmitted} 
@@ -140,6 +178,9 @@ const Game = (props) => {
           setScoreDenominator={setScoreDenominator}
           scoreDenominator={scoreDenominator}
           randomQuestionPosition={randomQuestionPosition}
+          progressBarIconColourArray={progressBarIconColourArray}
+          setProgressBarIconColourArray={setProgressBarIconColourArray}
+          updatedIconsColourArray={updatedIconsColourArray}
         /> 
       }
       
