@@ -4,9 +4,17 @@ footer {
     color: $clr-white;
     position: fixed;
     bottom: 0;
+    z-index: 50;
     width: 100%;
 
     .flexContainer {
         justify-content: center;
+    }
+
+    p {
+        margin: 0;
+        padding: 10px 0;
+        text-align: center;
+        @include lineHeight($height-mobile-p);
     }
 }

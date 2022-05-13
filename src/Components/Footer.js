@@ -6,7 +6,7 @@ const Footer = () => {
         <footer>
             <div className="wrapper flexContainer">
                 <p>
-                    Created by Alex, Ben, Madalina & Muhammad at <a href="https://junocollege.com/">Juno College</a>
+                    Created at <a href="https://junocollege.com/">Juno College</a>
                 </p>
             </div>
         </footer>

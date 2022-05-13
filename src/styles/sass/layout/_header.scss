@@ -16,10 +16,11 @@ header {
     }
     .headerNavList {
         display: flex;
+        justify-content: center;
         width: 100%;
     }
     li {
-        flex-basis: 32%;
+        text-align: center;
     }
     button {
         color: $clr-white;
@@ -29,6 +30,15 @@ header {
         background-color: $clr-purple;
         border: none;
         border-bottom: 2px solid $clr-white;
+
+        .aboutIcon,
+        .leaderboardIcon {
+            padding-right: 5px;
+        }
+
+        .aboutIcon {
+            padding-left: 10px;
+        }
 
         &:active
         &:hover,
@@ -41,7 +51,8 @@ header {
         p {
             color: $clr-limeGreen;
         }
-        i {
+        .aboutIcon,
+        .leaderboardIcon {
             color: $clr-limeGreen;
         }
         border-bottom: 2px solid $clr-limeGreen;

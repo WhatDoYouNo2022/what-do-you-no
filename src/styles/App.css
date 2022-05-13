@@ -246,19 +246,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 40;
+  font-size: 1.75rem;
+  line-height: 3rem;
+  text-align: center;
 }
 
 h2 {
-  font-size: 30;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
 }
 
 h3 {
-  font-size: 23;
+  font-size: 1.15rem;
+  line-height: 1.725rem;
 }
 
-p {
-  font-size: 18;
+p,
+table {
+  font-size: 0.9rem;
+  line-height: 1.35rem;
 }
 
 /* Base Styles Partial */
@@ -348,11 +354,13 @@ header .headerNavList {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
 }
 header li {
-  -ms-flex-preferred-size: 32%;
-      flex-basis: 32%;
+  text-align: center;
 }
 header button {
   color: rgb(255, 255, 255);
@@ -369,6 +377,13 @@ header button {
   border: none;
   border-bottom: 2px solid rgb(255, 255, 255);
 }
+header button .aboutIcon,
+header button .leaderboardIcon {
+  padding-right: 5px;
+}
+header button .aboutIcon {
+  padding-left: 10px;
+}
 header button:active header button:hover, header button:focus {
   color: rgb(207, 255, 49);
   border-bottom: 2px solid rgb(207, 255, 49);
@@ -379,7 +394,8 @@ header .tabActive {
 header .tabActive p {
   color: rgb(207, 255, 49);
 }
-header .tabActive i {
+header .tabActive .aboutIcon,
+header .tabActive .leaderboardIcon {
   color: rgb(207, 255, 49);
 }
 
@@ -388,6 +404,7 @@ header .tabActive i {
   position: absolute;
   left: -100000px;
   width: 100%;
+  height: 100%;
   background-color: rgb(255, 255, 255);
   z-index: 50;
 }
@@ -423,8 +440,12 @@ header .tabActive i {
 
 .slideOutMenuOpen {
   left: 0;
-  top: 0;
+  top: -20px;
   margin-top: -30px;
+}
+
+.hideMenuIcon {
+  padding-right: 5px;
 }
 
 /* Footer Specific Styles Partial */
@@ -433,12 +454,19 @@ footer {
   color: rgb(255, 255, 255);
   position: fixed;
   bottom: 0;
+  z-index: 50;
   width: 100%;
 }
 footer .flexContainer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+footer p {
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  line-height: 1.35rem;
 }
 
 /* Home Page Specific Styles Partial */
@@ -472,12 +500,22 @@ footer .flexContainer {
   color: rgb(255, 255, 255);
 }
 
+.aboutSection {
+  background-color: rgb(255, 255, 255);
+}
+.aboutSection img {
+  width: 65%;
+  margin: 0 auto;
+  display: block;
+  border: 10px solid rgb(96, 86, 249);
+}
+
 /* Landing Page Partial */
 .bookCover {
   width: 320px;
   height: 550px;
   background-color: rgb(96, 86, 249);
-  margin: 30px auto;
+  margin: 50px auto 100px;
   padding-top: 5px;
   box-shadow: 15px 17px 24px -5px rgba(0, 0, 0, 0.38);
   -webkit-box-shadow: 15px 17px 24px -5px rgba(0, 0, 0, 0.38);

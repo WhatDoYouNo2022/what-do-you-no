@@ -12,14 +12,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: $size-h1;
+    @include fontSize($size-mobile-h1);
+    @include lineHeight($height-h1);
+    text-align: center;
 }
 h2 {
-    font-size: $size-h2;
+    @include fontSize($size-h2);
+    @include lineHeight($height-h2);
 }
 h3 {
-    font-size: $size-h3;
+    @include fontSize($size-h3);
+    @include lineHeight($height-h3);
 }
-p {
-    font-size: $size-mobile-p;
+p,
+table {
+    @include fontSize($size-mobile-p);
+    @include lineHeight($height-mobile-p);
 }

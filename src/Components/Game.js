@@ -144,8 +144,7 @@ const Game = (props) => {
   }
 
   return (
-<<<<<<< HEAD
-    <div>
+    <div className="wrapper">
       <Score 
         score={score} 
         setScore={setScore} 
@@ -156,10 +155,6 @@ const Game = (props) => {
         progressBarIconArray={progressBarIconArray}
         progressBarIconColourArray={progressBarIconColourArray}
       />
-=======
-    <div className="wrapper">
-      <Score score={score} setScore={setScore} scoreDenominator={scoreDenominator} />
->>>>>>> feature/end-animation
       { isGameOver ? 
         <GameOverDisplay 
           scoreSubmitted={scoreSubmitted} 
