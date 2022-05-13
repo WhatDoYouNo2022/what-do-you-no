@@ -2,7 +2,7 @@
 
 // Modules
 import { useState } from "react";
-// react confetti found here: https://www.npmjs.com/package/react-confetti
+// react confetti module sourced from: https://www.npmjs.com/package/react-confetti
 import Confetti from "react-confetti"
 // Components
 import LeaderboardForm from "./LeaderboardForm";
@@ -12,20 +12,20 @@ const GameOverDisplay = (props) => {
     const { scoreSubmitted, setScoreSubmitted, score } = props;
     const [usernameDeclined, setUsernameDeclined] = useState(false);
     const { width, height } = useWindowSize();
-
+    // An array to hold the colors for the confetti.
+    const confettiColors = ['#6056f9', '#fff', '#cfff31']
     const refreshPage = () => {
         window.location.reload(false);
     }
-    const confettiColors = ['#6056f9', '#fff', '#cfff31']
+    
     return (
         <>
             <Confetti
                 width={width}
                 height={height}
                 colors={confettiColors}
-                numberOfPieces={200}
             />
-            <p>Game Over!</p>
+            <h2>Thanks for playing!</h2>
             {scoreSubmitted && usernameDeclined === false ? 
                 <p>Your score has been submitted</p>
             : usernameDeclined ?

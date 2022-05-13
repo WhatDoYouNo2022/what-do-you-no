@@ -115,7 +115,7 @@ const Game = (props) => {
   }
 
   return (
-    <div>
+    <div className="wrapper">
       <Score score={score} setScore={setScore} scoreDenominator={scoreDenominator} />
       { isGameOver ? 
         <GameOverDisplay 

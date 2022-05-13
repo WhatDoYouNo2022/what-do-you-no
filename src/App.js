@@ -87,7 +87,11 @@ function App() {
               <LandingPage handleAboutButtonClick={handleAboutButtonClick} />
             }
           />
-          <Route path="/gamepage" element={<Game />} />
+          <Route path="/gamepage" element={
+          <Game 
+            initialWords={initialWords}
+          />
+          } />
         </Routes>
         {menuOpen ? (
           <SlideOutMenu
@@ -98,9 +102,6 @@ function App() {
             handleAboutButtonClick={handleAboutButtonClick}
           />
         ) : null}
-        <div className="wrapper">
-          <Game initialWords={initialWords} />
-        </div>
       </main>
       <Footer />
     </div>
