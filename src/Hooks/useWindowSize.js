@@ -1,8 +1,9 @@
 // useWindowSize.js
 
+// useWindowSize hook sourced from: https://usehooks.com/useWindowSize/
+
 import { useState, useEffect } from "react";
 
-// useWindowSize hook from: https://usehooks.com/useWindowSize/
 const useWindowSize = () => {
     // Create a state variable to hold the width and height of the window object.
     const [ windowSize, setWindowSize ] = useState({
