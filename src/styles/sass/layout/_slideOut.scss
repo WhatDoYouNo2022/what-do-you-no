@@ -6,6 +6,10 @@
   width: 100%;
   background-color: $clr-white;
 
+  a {
+    color: $clr-purple;
+  }
+
   .leaderboardSection {
     width: 100%;
     background-color: $clr-white;
@@ -28,6 +32,8 @@
 }
 
 .slideOutMenuOpen {
-  position: static;
+  position: absolute;
   left: 0;
+  top: 0;
+  margin-top: -30px
 }

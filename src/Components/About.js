@@ -16,14 +16,23 @@ const About = (props) => {
       <div className="wrapper">
         <div className="aboutTopMenu">
           <p>
-            What Do You No? was created by Alex, Ben, Madalina and Muhammad
-            using data from the
-            <a
+            <strong>What Do You No?</strong> was created by <a href="https://www.alexandrafriedman.ca/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Alex</a>, <a 
+            href="https://www.benbourgon.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Ben</a>, <a 
+            href="https://www.madalinacodes.com/"
+            target="_blank"
+            rel="noopener noreferrer">Madalina</a> and <a href="https://www.mwazir.com/"
+            target="_blank"
+            rel="noopener noreferrer">Muhammad</a> using data from the <a
               href="https://www.datamuse.com/api/"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              Datamuse API
+            >Datamuse API
             </a>
           </p>
           <img
@@ -31,16 +40,12 @@ const About = (props) => {
             alt="Dictionaries sit on a table with an apple and a dip pen amongst foliage"
           />
           <p>
-            Photo by
-            <a
+            Photo by <a
               href="https://unsplash.com/@ohlmanphotography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              Laura Ohlman
-            </a>
-            on
-            <a
+            > Laura Ohlman
+            </a> on <a
               href="https://unsplash.com/s/photos/dictionary?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
               target="_blank"
               rel="noopener noreferrer"
