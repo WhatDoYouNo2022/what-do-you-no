@@ -1,1 +1,27 @@
 /* Game Page Specific Styles Partial */
+
+.progress-bar {
+    background: $clr-purple;
+    width: 80%;
+    height: 50px;
+    
+    ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        
+    }
+}
+
+.green-progress-icon {
+    color: $clr-limeGreen;
+}
+
+.red-progress-icon {
+    color: $clr-red;
+}
+
+.white-progress-icon {
+    color: $clr-white;
+}

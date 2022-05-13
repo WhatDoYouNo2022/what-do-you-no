@@ -8,6 +8,8 @@ import Footer from "./Components/Footer.js";
 import Game from "./Components/Game.js";
 import SlideOutMenu from "./Components/SlideOutMenu.js";
 import LandingPage from "./Components/LandingPage.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBook, faBookOpen } from "@fortawesome/free-solid-svg-icons";
 
 // Utilities
 
@@ -27,6 +29,10 @@ function App() {
 
   // array to store initial list of words
   const initialWords = ["flour", "break", "aisle", "tail", "maid", "waist", "pray", "some", "ate", "son"];
+
+  let updatedIconsColourArray = ['white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon'];
+
+
 
   
 
@@ -99,7 +105,7 @@ function App() {
           />
         ) : null}
         <div className="wrapper">
-          <Game initialWords={initialWords} />
+          <Game initialWords={initialWords} updatedIconsColourArray={updatedIconsColourArray} />
         </div>
       </main>
       <Footer />
