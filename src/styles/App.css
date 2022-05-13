@@ -269,6 +269,10 @@ body {
   height: 100vh;
 }
 
+main {
+  position: relative;
+}
+
 .wrapper {
   max-width: 1260px;
   width: 95%;
@@ -385,6 +389,10 @@ header .tabActive i {
   left: -100000px;
   width: 100%;
   background-color: rgb(255, 255, 255);
+  z-index: 50;
+}
+.slideOutMenu a {
+  color: rgb(96, 86, 249);
 }
 .slideOutMenu .leaderboardSection {
   width: 100%;
@@ -414,14 +422,18 @@ header .tabActive i {
 }
 
 .slideOutMenuOpen {
-  position: static;
   left: 0;
+  top: 0;
+  margin-top: -30px;
 }
 
 /* Footer Specific Styles Partial */
 footer {
   background-color: rgb(96, 86, 249);
   color: rgb(255, 255, 255);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 footer .flexContainer {
   -webkit-box-pack: center;

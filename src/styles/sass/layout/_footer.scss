@@ -2,6 +2,10 @@
 footer {
     background-color: $clr-purple;
     color: $clr-white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
     .flexContainer {
         justify-content: center;
     }

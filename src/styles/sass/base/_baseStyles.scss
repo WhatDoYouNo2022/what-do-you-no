@@ -5,7 +5,9 @@ body {
   background-color: $clr-lightBlue;
   height: 100vh;
 }
-
+main {
+  position: relative;
+}
 .wrapper {
   max-width: 1260px;
   width: 95%;
