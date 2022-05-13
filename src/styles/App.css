@@ -389,6 +389,7 @@ header .tabActive i {
   left: -100000px;
   width: 100%;
   background-color: rgb(255, 255, 255);
+  z-index: 50;
 }
 .slideOutMenu a {
   color: rgb(96, 86, 249);
@@ -421,7 +422,6 @@ header .tabActive i {
 }
 
 .slideOutMenuOpen {
-  position: absolute;
   left: 0;
   top: 0;
   margin-top: -30px;

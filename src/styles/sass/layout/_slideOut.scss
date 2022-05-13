@@ -5,6 +5,7 @@
   left: -100000px;
   width: 100%;
   background-color: $clr-white;
+  z-index: 50;
 
   a {
     color: $clr-purple;
@@ -32,7 +33,6 @@
 }
 
 .slideOutMenuOpen {
-  position: absolute;
   left: 0;
   top: 0;
   margin-top: -30px
