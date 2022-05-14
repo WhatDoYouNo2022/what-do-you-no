@@ -15,6 +15,16 @@ const About = (props) => {
     <section className="aboutSection" id="about">
       <div className="wrapper">
         <div className="aboutTopMenu">
+          <div className="instructions">
+            <h2>What Do You No?</h2>
+            <h3>proper noun</h3>
+            <ol>
+              <li>A fun and educational word game designed to test your knowledge of homophonous words, e.g. piece and peace.</li>
+              <li>A quiz <span className="strikethrough">maid</span> made <span className="strikethrough">two</span> to enhance your vocabulary buy by offering a definition and the choice between <span className="strikethrough">too</span> two different spellings.</li>
+              <li>For each of the 10 questions, you will be given a definition of a word and you must select the word that matches the definition. Once the game ends, you can add your score to the leaderboard. Good luck!</li>
+            </ol>
+          </div>
+          <hr />
           <p>
             <strong>What Do You No?</strong> was created by <a href="https://www.alexandrafriedman.ca/"
             target="_blank"
