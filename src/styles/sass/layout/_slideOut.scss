@@ -18,8 +18,6 @@
     background-color: $clr-white;
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
-=======
     margin-top: 40px;
 
     table {
@@ -33,19 +31,18 @@
       color: $clr-white;
     }
 
-    th, td, tr {
+    th,
+    td,
+    tr {
       border: 2px solid rgba(0, 0, 0, 0.6);
       text-align: center;
       padding: 4px;
     }
-
->>>>>>> main
   }
   .leaderTopMenu {
     max-height: 365px;
     max-width: 350px;
     overflow-y: auto;
-    
   }
 
   .hideMenuButton {
@@ -55,22 +52,14 @@
     width: 100%;
     background-color: $clr-white;
     border: none;
-<<<<<<< HEAD
     cursor: pointer;
-=======
     padding-bottom: 50px;
->>>>>>> main
   }
 }
 
 .slideOutMenuOpen {
   left: 0;
-<<<<<<< HEAD
-  top: -20px;
-  margin-top: -30px;
-=======
   top: 0;
->>>>>>> main
 }
 
 .hideMenuIcon {

@@ -192,24 +192,19 @@ const Game = (props) => {
           handleCloseModal={handleCloseModal}
         />
       ) : null}
-      <Score
-        score={score}
-        setScore={setScore}
-        scoreDenominator={scoreDenominator}
-      />
       <ProgressBar
         questionNumber={questionNumber}
         progressBarIconArray={progressBarIconArray}
         progressBarIconColourArray={progressBarIconColourArray}
       />
-      <Score 
-        score={score} 
-        setScore={setScore} 
-        scoreDenominator={scoreDenominator} 
+      <Score
+        score={score}
+        setScore={setScore}
+        scoreDenominator={scoreDenominator}
       />
-      { isGameOver ? 
-        <GameOverDisplay 
-          scoreSubmitted={scoreSubmitted} 
+      {isGameOver ? (
+        <GameOverDisplay
+          scoreSubmitted={scoreSubmitted}
           setScoreSubmitted={setScoreSubmitted}
           score={score}
           setModalIsOpen={setModalIsOpen}

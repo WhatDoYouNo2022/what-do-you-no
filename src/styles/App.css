@@ -452,7 +452,9 @@ header .tabActive .leaderboardIcon {
   background: rgb(96, 86, 249);
   color: rgb(255, 255, 255);
 }
-.slideOutMenu .leaderboardSection th, .slideOutMenu .leaderboardSection td, .slideOutMenu .leaderboardSection tr {
+.slideOutMenu .leaderboardSection th,
+.slideOutMenu .leaderboardSection td,
+.slideOutMenu .leaderboardSection tr {
   border: 2px solid rgba(0, 0, 0, 0.6);
   text-align: center;
   padding: 4px;
@@ -475,11 +477,8 @@ header .tabActive .leaderboardIcon {
   width: 100%;
   background-color: rgb(255, 255, 255);
   border: none;
-<<<<<<< HEAD
   cursor: pointer;
-=======
   padding-bottom: 50px;
->>>>>>> main
 }
 
 .slideOutMenuOpen {
