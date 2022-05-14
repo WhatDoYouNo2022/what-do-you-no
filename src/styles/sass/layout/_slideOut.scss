@@ -17,7 +17,6 @@
     background-color: $clr-white;
     display: flex;
     flex-direction: column;
-
   }
   .leaderTopMenu {
     max-height: 365px;
@@ -30,15 +29,17 @@
     align-items: center;
     background-color: $clr-white;
     border: none;
+    cursor: pointer;
   }
 }
 
 .slideOutMenuOpen {
   left: 0;
   top: -20px;
-  margin-top: -30px
+  margin-top: -30px;
 }
 
 .hideMenuIcon {
   padding-right: 5px;
+  cursor: pointer;
 }

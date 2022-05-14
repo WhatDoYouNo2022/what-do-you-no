@@ -436,6 +436,7 @@ header .tabActive .leaderboardIcon {
           align-items: center;
   background-color: rgb(255, 255, 255);
   border: none;
+  cursor: pointer;
 }
 
 .slideOutMenuOpen {
@@ -446,6 +447,7 @@ header .tabActive .leaderboardIcon {
 
 .hideMenuIcon {
   padding-right: 5px;
+  cursor: pointer;
 }
 
 /* Footer Specific Styles Partial */
@@ -589,4 +591,66 @@ footer p {
 
 .firstEdition {
   text-transform: uppercase;
+}
+
+.modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(207, 255, 49, 0.9);
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: -5000px;
+  -webkit-transition: unset;
+  transition: unset;
+}
+.modal .modalMessageBox {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+  width: 90%;
+  border: 10px solid rgb(96, 86, 249);
+  z-index: 60;
+}
+.modal .flexContainer {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modalOpen {
+  position: fixed;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.closeModal {
+  position: fixed;
+  cursor: pointer;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  background: transparent;
+  border: none;
+  outline: none;
 }

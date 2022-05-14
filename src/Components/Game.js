@@ -5,6 +5,7 @@ import QuestionsDisplay from "./QuestionsDisplay";
 import Score from "./Score";
 import ProgressBar from "./ProgressBar";
 import { faBook, faBookOpen } from "@fortawesome/free-solid-svg-icons";
+import ModalWindow from "./ModalWindow";
 
 const Game = (props) => {
   //Examples of Homophone Pairs https://www.englishclub.com/pronunciation/homophones-list.htm
@@ -68,6 +69,20 @@ const Game = (props) => {
   //store homophone generated from API
   let homophone;
 
+  //modal window state
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  //modal title
+  const [modalTitle, setModalTitle] = useState("");
+
+  //modal message
+  const [modalMessage, setModalMessage] = useState("");
+
+  //close modal window function
+  const handleCloseModal = () => {
+    setModalIsOpen(false);
+  };
+
   //Api call
   useEffect(() => {
     axios({
@@ -85,7 +100,11 @@ const Game = (props) => {
         setData(response.data);
       })
       .catch((err) => {
-        // console.log(err);
+        setModalIsOpen(true);
+        setModalTitle("Error");
+        setModalMessage(
+          "We're having trouble reaching the data right now. Please try again later."
+        );
       });
   }, [randomWord]);
 
@@ -132,7 +151,9 @@ const Game = (props) => {
 
         handleIconUpdate();
       } else {
-        alert("Please select a word");
+        setModalIsOpen(true);
+        setModalMessage("Please select a word before clicking Next");
+        setModalTitle("Try Your Best!");
       }
     } else {
       handleIconUpdate();
@@ -162,6 +183,15 @@ const Game = (props) => {
 
   return (
     <div className="wrapper">
+      {modalIsOpen ? (
+        <ModalWindow
+          modalIsOpen={modalIsOpen}
+          setModalIsOpen={modalIsOpen}
+          modalMessage={modalMessage}
+          modalTitle={modalTitle}
+          handleCloseModal={handleCloseModal}
+        />
+      ) : null}
       <Score
         score={score}
         setScore={setScore}
