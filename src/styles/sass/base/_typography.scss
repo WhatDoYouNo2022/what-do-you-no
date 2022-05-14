@@ -16,16 +16,20 @@ h1 {
     @include lineHeight($height-h1);
     text-align: center;
 }
+
 h2 {
     @include fontSize($size-h2);
     @include lineHeight($height-h2);
 }
+
 h3 {
     @include fontSize($size-h3);
     @include lineHeight($height-h3);
 }
+
 p,
-table {
+table, 
+li {
     @include fontSize($size-mobile-p);
     @include lineHeight($height-mobile-p);
 }
