@@ -38,7 +38,9 @@ const GameOverDisplay = (props) => {
                 setUsernameDeclined={setUsernameDeclined}
             />
             }
+            {scoreSubmitted || usernameDeclined ? 
             <button onClick={refreshPage}>Restart Game</button>
+            : null}
         </>
     )
 }
