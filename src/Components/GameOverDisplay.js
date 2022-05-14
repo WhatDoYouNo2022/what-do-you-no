@@ -11,7 +11,14 @@ import LeaderboardForm from "./LeaderboardForm";
 import useWindowSize from "../Hooks/useWindowSize";
 
 const GameOverDisplay = (props) => {
-  const { scoreSubmitted, setScoreSubmitted, score } = props;
+  const {
+    scoreSubmitted,
+    setScoreSubmitted,
+    score,
+    setModalIsOpen,
+    setModalMessage,
+    setModalTitle,
+  } = props;
   const [usernameDeclined, setUsernameDeclined] = useState(false);
   const { width, height } = useWindowSize();
   // An array to hold the colors for the confetti.
@@ -31,6 +38,9 @@ const GameOverDisplay = (props) => {
           setScoreSubmitted={setScoreSubmitted}
           score={score}
           setUsernameDeclined={setUsernameDeclined}
+          setModalIsOpen={setModalIsOpen}
+          setModalMessage={setModalMessage}
+          setModalTitle={setModalTitle}
         />
       )}
       <Link to="/">Restart Game</Link>

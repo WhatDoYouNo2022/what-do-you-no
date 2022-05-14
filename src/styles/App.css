@@ -603,7 +603,7 @@ footer p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(207, 255, 49, 0.9);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 100;
   width: 100vw;
   height: 100vh;
@@ -636,9 +636,11 @@ footer p {
       -ms-flex-align: center;
           align-items: center;
 }
+.modal p {
+  max-width: 400px;
+}
 
 .modalOpen {
-  position: fixed;
   left: 0;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;

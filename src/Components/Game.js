@@ -207,6 +207,9 @@ const Game = (props) => {
           scoreSubmitted={scoreSubmitted}
           setScoreSubmitted={setScoreSubmitted}
           score={score}
+          setModalIsOpen={setModalIsOpen}
+          setModalMessage={setModalMessage}
+          setModalTitle={setModalTitle}
         />
       ) : (
         <QuestionsDisplay
