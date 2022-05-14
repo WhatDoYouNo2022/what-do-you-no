@@ -6,6 +6,7 @@ header {
 
     h1 {
         color: $clr-limeGreen;
+        margin-bottom: 0;
     }
 
     .flexContainer {
@@ -29,7 +30,7 @@ header {
         justify-content: space-between;
         background-color: $clr-purple;
         border: none;
-        border-bottom: 2px solid $clr-white;
+        border-bottom: 4px solid $clr-white;
 
         .aboutIcon,
         .leaderboardIcon {
@@ -37,14 +38,14 @@ header {
         }
 
         .aboutIcon {
-            padding-left: 10px;
+            padding-left: 20px;
         }
 
-        &:active
+        &:active,
         &:hover,
         &:focus {
             color: $clr-limeGreen;
-            border-bottom: 2px solid $clr-limeGreen;
+            border-bottom: 4px solid $clr-limeGreen;
         }
     }
     .tabActive {
@@ -55,6 +56,6 @@ header {
         .leaderboardIcon {
             color: $clr-limeGreen;
         }
-        border-bottom: 2px solid $clr-limeGreen;
+        border-bottom: 4px solid $clr-limeGreen;
     }
 }

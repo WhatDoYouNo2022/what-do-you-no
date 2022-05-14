@@ -1,7 +1,8 @@
 /* Landing Page Partial */
 
 .bookCover {
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   height: 550px;
   background-color: $clr-purple;
   margin: 50px auto 100px;
