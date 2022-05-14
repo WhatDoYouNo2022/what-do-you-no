@@ -38,7 +38,8 @@ a {
   }
 }
 
-.mainMenuControls {
+.mainMenuControls, 
+.nextQ {
   @include fontSize($size-desktop-p);
   font-family: $ff-bodyFont;
   background-color: $clr-limeGreen;

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRankingStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 
 const Score = (props) => {
@@ -7,9 +7,9 @@ const Score = (props) => {
     const { score, scoreDenominator } = props
 
     return (
-        <h2>
+        <h2 className="score">
             <FontAwesomeIcon
-                icon={faRankingStar}
+                icon={faStar}
                 className="scoreIcon"
                 aria-hidden="true"
             />

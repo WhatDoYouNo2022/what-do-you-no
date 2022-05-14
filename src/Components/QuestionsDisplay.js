@@ -1,4 +1,6 @@
 import { useEffect } from 'react'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const QuestionsDisplay = (props) => {
     const {
@@ -91,17 +93,24 @@ const QuestionsDisplay = (props) => {
                 return (
                     <div key={index}>
                         {evaluateWordType(item)}
-                        <p><em>{wordType} - </em>{definition}</p>
-                        <form action="#">
+                        <p><span className="wordType">{wordType} - </span>{definition}</p>
+                        <form action="#" className="questionForm">
                             <fieldset onChange={(event) => handleUserAnswerSelection(event)}>
-                                <legend>Click on the word that matches the definition</legend>
+                                <legend className="sr-only">Click on the word that matches the definition</legend>
                                 <label htmlFor="wordOne">{randomQuestionPosition === 1 ? randomWord : item.word}</label>
                                 <input type="radio" id="wordOne" name="homophone" value={randomQuestionPosition === 1 ? randomWord : item.word} checked={wordOneChecked} onChange={(event) => handleChange(event)} />
                                 <label htmlFor="wordTwo">{randomQuestionPosition === 1 ? item.word : randomWord}</label>
                                 <input type="radio" id="wordTwo" name="homophone" value={randomQuestionPosition === 1 ? item.word : randomWord} checked={wordTwoChecked} onChange={(event) => handleChange(event)} />
                             </fieldset>
                         </form>
-                        <button onClick={handleNextQuestion}>Next</button>
+                        <button onClick={handleNextQuestion} className="nextQ">
+                            <FontAwesomeIcon
+                                className="buttonIcon"
+                                icon={faChevronRight}
+                                aria-hidden="true"
+                            />
+                            <p>Next</p>
+                        </button>
                     </div>
                 );
             })}
