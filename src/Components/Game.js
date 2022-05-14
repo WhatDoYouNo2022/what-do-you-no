@@ -202,9 +202,14 @@ const Game = (props) => {
         progressBarIconArray={progressBarIconArray}
         progressBarIconColourArray={progressBarIconColourArray}
       />
-      {isGameOver ? (
-        <GameOverDisplay
-          scoreSubmitted={scoreSubmitted}
+      <Score 
+        score={score} 
+        setScore={setScore} 
+        scoreDenominator={scoreDenominator} 
+      />
+      { isGameOver ? 
+        <GameOverDisplay 
+          scoreSubmitted={scoreSubmitted} 
           setScoreSubmitted={setScoreSubmitted}
           score={score}
           setModalIsOpen={setModalIsOpen}

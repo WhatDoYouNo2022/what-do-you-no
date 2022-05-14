@@ -43,7 +43,9 @@ const GameOverDisplay = (props) => {
           setModalTitle={setModalTitle}
         />
       )}
-      <Link to="/">Restart Game</Link>
+      {scoreSubmitted || usernameDeclined ? (
+        <Link to="/">Restart Game</Link>
+      ) : null}
     </>
   );
 };

@@ -1,9 +1,12 @@
 /* Game Page Specific Styles Partial */
 
+// Progress Bar
+
 .progress-bar {
     background: $clr-purple;
-    width: 80%;
+    width: 100%;
     height: 50px;
+    margin-top: 25px;
     
     ul {
         display: flex;
@@ -25,3 +28,30 @@
 .white-progress-icon {
     color: $clr-white;
 }
+
+// Score
+
+.score {
+    text-align: center;
+    background-color: $clr-purple;
+    color: $clr-white;
+    margin: 0;
+    .scoreIcon {
+        padding-right: 5px;
+    }
+}
+
+// Questions
+
+.questionForm {
+    fieldset {
+        border: none;
+    }
+}
+
+// .nextQ {
+//     border: 2px solid black;
+//     border-radius: 5px;
+//     background-color: $clr-limeGreen;
+//     padding: 8px 15px 5px;
+// }

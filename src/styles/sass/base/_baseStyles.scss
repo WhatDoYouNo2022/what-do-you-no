@@ -5,13 +5,21 @@ body {
   background-color: $clr-lightBlue;
   height: 100vh;
 }
+
+.App {
+  height: 100vh;
+}
+
 main {
   position: relative;
+  height: 100%;
 }
+
 .wrapper {
   max-width: 1260px;
   width: 95%;
   margin: 0 auto;
+  height: 100%;
 }
 
 .flexContainer {
@@ -30,7 +38,8 @@ a {
   }
 }
 
-.mainMenuControls {
+.mainMenuControls, 
+.nextQ {
   @include fontSize($size-desktop-p);
   font-family: $ff-bodyFont;
   background-color: $clr-limeGreen;
@@ -54,3 +63,13 @@ a {
     padding: 0 10px;
   }
 }
+
+h2, h3 {
+  margin: 10px 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+
