@@ -145,15 +145,15 @@ const Game = (props) => {
 
   return (
     <div className="wrapper">
-      <Score 
-        score={score} 
-        setScore={setScore} 
-        scoreDenominator={scoreDenominator} 
-      />
       <ProgressBar
         questionNumber={questionNumber}
         progressBarIconArray={progressBarIconArray}
         progressBarIconColourArray={progressBarIconColourArray}
+      />
+      <Score 
+        score={score} 
+        setScore={setScore} 
+        scoreDenominator={scoreDenominator} 
       />
       { isGameOver ? 
         <GameOverDisplay 
