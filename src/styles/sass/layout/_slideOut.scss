@@ -18,6 +18,8 @@
     background-color: $clr-white;
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
+=======
     margin-top: 40px;
 
     table {
@@ -37,6 +39,7 @@
       padding: 4px;
     }
 
+>>>>>>> main
   }
   .leaderTopMenu {
     max-height: 365px;
@@ -52,15 +55,25 @@
     width: 100%;
     background-color: $clr-white;
     border: none;
+<<<<<<< HEAD
+    cursor: pointer;
+=======
     padding-bottom: 50px;
+>>>>>>> main
   }
 }
 
 .slideOutMenuOpen {
   left: 0;
+<<<<<<< HEAD
+  top: -20px;
+  margin-top: -30px;
+=======
   top: 0;
+>>>>>>> main
 }
 
 .hideMenuIcon {
   padding-right: 5px;
+  cursor: pointer;
 }

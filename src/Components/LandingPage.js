@@ -6,7 +6,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookOpen, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const LandingPage = (props) => {
-  const { handleAboutButtonClick } = props;
+  const { handleAboutButtonClick, initialWords } = props;
+
+  const handleStartGame = () => {
+    initialWords.push(
+      "flour",
+      "break",
+      "aisle",
+      "tail",
+      "maid",
+      "waist",
+      "pray",
+      "some",
+      "ate",
+      "son"
+    );
+  };
 
   return (
     <div className="wrapper">
@@ -32,7 +47,11 @@ const LandingPage = (props) => {
               />
               <p>Instructions</p>
             </button>
-            <Link className="mainMenuControls" to="/gamepage">
+            <Link
+              className="mainMenuControls"
+              to="/gamepage"
+              onClick={handleStartGame}
+            >
               <FontAwesomeIcon
                 className="buttonIcon"
                 icon={faBookOpen}

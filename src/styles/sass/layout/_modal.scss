@@ -1,0 +1,49 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: -5000px;
+  transition: unset;
+
+  .modalMessageBox {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: $clr-white;
+    padding: 15px;
+    width: 90%;
+    border: 10px solid $clr-purple;
+    z-index: 60;
+  }
+
+  .flexContainer {
+    align-items: center;
+  }
+
+  p {
+    max-width: 400px;
+  }
+}
+
+.modalOpen {
+  left: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.closeModal {
+  position: fixed;
+  cursor: pointer;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  background: transparent;
+  border: none;
+  outline: none;
+}

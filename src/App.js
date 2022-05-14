@@ -25,16 +25,32 @@ function App() {
   // state of whether the about section is to be displayed.
   const [aboutOpen, setAboutOpen] = useState(false);
 
-  
-
   // array to store initial list of words
-  const initialWords = ["flour", "break", "aisle", "tail", "maid", "waist", "pray", "some", "ate", "son"];
+  let initialWords = [
+    // "flour",
+    // "break",
+    // "aisle",
+    // "tail",
+    // "maid",
+    // "waist",
+    // "pray",
+    // "some",
+    // "ate",
+    // "son",
+  ];
 
-  let updatedIconsColourArray = ['white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon', 'white-progress-icon'];
-
-
-
-  
+  let updatedIconsColourArray = [
+    "white-progress-icon",
+    "white-progress-icon",
+    "white-progress-icon",
+    "white-progress-icon",
+    "white-progress-icon",
+    "white-progress-icon",
+    "white-progress-icon",
+    "white-progress-icon",
+    "white-progress-icon",
+    "white-progress-icon",
+  ];
 
   // Event handler for the About navigation button
   const handleAboutButtonClick = () => {
@@ -73,9 +89,7 @@ function App() {
       setLeaderboardOpen(false);
       setAboutOpen(false);
     }
-  }
-
-  
+  };
 
   return (
     <div className="App">
@@ -90,15 +104,21 @@ function App() {
           <Route
             path="/"
             element={
-              <LandingPage handleAboutButtonClick={handleAboutButtonClick} />
+              <LandingPage
+                handleAboutButtonClick={handleAboutButtonClick}
+                initialWords={initialWords}
+              />
             }
           />
-          <Route path="/gamepage" element={
-          <Game 
-            initialWords={initialWords}
-            updatedIconsColourArray={updatedIconsColourArray}
+          <Route
+            path="/gamepage"
+            element={
+              <Game
+                initialWords={initialWords}
+                updatedIconsColourArray={updatedIconsColourArray}
+              />
+            }
           />
-          } />
         </Routes>
         {menuOpen ? (
           <SlideOutMenu
