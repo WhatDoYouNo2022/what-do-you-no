@@ -26,7 +26,12 @@ const GameOverDisplay = (props) => {
 
   return (
     <>
-      <Confetti width={width} height={height} colors={confettiColors} />
+      {/* confetti animation on game completion */}
+      <Confetti 
+        width={width}
+        height={height}
+        colors={confettiColors}
+      />
       <h2>Thanks for playing!</h2>
       {scoreSubmitted && usernameDeclined === false ? (
         <p>Your score has been submitted</p>
