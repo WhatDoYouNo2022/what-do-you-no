@@ -2,18 +2,77 @@
 
 
 .bookCover.backCover {
-    h2 {
-        color: $clr-limeGreen;
+    width: 100%;
+    max-width: 305px;
+    height: 500px;
+    margin-top: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .pagesContainer {
+        display: flex;
+        justify-content: flex-start;
+        position: absolute;
+        left: 0;
+        top: 5px;
+
+        .topBackPages {
+            background-color: $clr-white;
+            width: 299px;
+            height: 20px;
+            border-radius: 5px;
+            margin-left: -5px;
+        }
+        .sideBackPages {
+            background-color: $clr-white;
+            height: 495px;
+            width: 5px;
+            border-radius: 3px;
+            margin-left: 2px;
+        }
     }
-    ul {
-        list-style-type: disc;
-        text-align: left;
-        list-style-position: inside;
-        padding-left: 15px;
-        padding-bottom: 15px;
-    }
-    .usernameInput {
+    .bookCoverContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 95%;
         width: 95%;
-        margin: 25px auto;
+    
+        p {
+            width: 200px;
+        }
+        h2 {
+            color: $clr-limeGreen;
+            margin-top: 2px;
+        }
+        ul {
+            list-style-type: disc;
+            text-align: left;
+            list-style-position: outside;
+            margin-left: 30px;
+            padding-bottom: 15px;
+            text-indent:  0px;
+        }
+        li {
+            padding: 5px 0;
+        }
+        .backCoverJuno {
+            color: $clr-limeGreen;
+            text-align: left;
+            position: absolute;
+            left: 5px;
+            bottom: -15px;
+        }
+        .barcode {
+            width: 75px;
+            display: block;
+            height: auto;
+            padding: 5px;
+            position:absolute;
+            bottom: 0px;
+            right: -5px;
+        }
     }
 }

@@ -5,10 +5,13 @@ import { useState } from "react";
 // react confetti module sourced from: https://www.npmjs.com/package/react-confetti
 import Confetti from "react-confetti";
 import { Link } from "react-router-dom";
-
 // Components
 import LeaderboardForm from "./LeaderboardForm";
 import useWindowSize from "../Hooks/useWindowSize";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
+// Styling
+import Barcode from "../assets/barcode-small.png"
 
 const GameOverDisplay = (props) => {
   const {
@@ -19,26 +22,38 @@ const GameOverDisplay = (props) => {
     setModalMessage,
     setModalTitle,
   } = props;
-  const [usernameDeclined, setUsernameDeclined] = useState(false);
+  const [ usernameDeclined, setUsernameDeclined ] = useState(false);
   const { width, height } = useWindowSize();
   // An array to hold the colors for the confetti.
-  const confettiColors = ["#6056f9", "#fff", "#cfff31"];
+  const confettiColors = ["#6056f9", "#fff", "#cfff31"]
 
   return (
     <section className="gameOverDisplay">
       {/* confetti animation on game completion */}
-      <Confetti 
-        width={width}
-        height={height}
-        colors={confettiColors}
-      />
+        <Confetti 
+          width={width}
+          height={height}
+          colors={confettiColors}
+          numberOfPieces={2500}
+          recycle={false}
+        />
       <div className="bookCover backCover">
+        <div className="pagesContainer">
+          <div className="sideBackPages"></div>
+          <div className="topBackPages"></div>
+        </div>
         <div className="bookCoverContent">
           <h2>Thanks for playing!</h2>
           {scoreSubmitted && usernameDeclined === false ? (
-            <p>Your score has been submitted</p>
+            <>
+              <p>Your score has been submitted.</p>
+              <p>Play again?</p>
+            </>
           ) : usernameDeclined ? (
-            <p>Ok, we won't submit your score. Thanks for playing!</p>
+            <>
+              <p>No worries, we won't submit your score.</p>
+              <p>Play again?</p>
+            </>
           ) : (
             <LeaderboardForm
               scoreSubmitted={scoreSubmitted}
@@ -50,14 +65,27 @@ const GameOverDisplay = (props) => {
               setModalTitle={setModalTitle}
             />
           )}
-          {scoreSubmitted || usernameDeclined ? (
+          { scoreSubmitted || usernameDeclined ? (
             <Link 
-            to="/"
-            className="restartGame"
-            >Restart Game</Link>
-          ) : null}`
-        </div>
-      </div>
+              to="/"
+              className="restartGame"
+            >
+              <FontAwesomeIcon 
+              icon={faRotateRight}
+              className="buttonIcon"
+              />
+              <p>Restart Game</p>
+            </Link>
+          ) : null
+          }
+            <img
+              src={Barcode}
+              alt="A fake barcode for this dictionary-themed game completion screen"
+              className="barcode"
+            />
+            <p className="backCoverJuno">Juno College Press</p>
+        </div> {/* End of bookCoverContent*/}
+      </div> {/* End of bookCover backCover*/}
     </section>
   );
 };

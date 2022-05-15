@@ -192,11 +192,13 @@ const Game = (props) => {
           handleCloseModal={handleCloseModal}
         />
       ) : null}
-      <ProgressBar
-        questionNumber={questionNumber}
-        progressBarIconArray={progressBarIconArray}
-        progressBarIconColourArray={progressBarIconColourArray}
-      />
+      {isGameOver ? null :
+        <ProgressBar
+          questionNumber={questionNumber}
+          progressBarIconArray={progressBarIconArray}
+          progressBarIconColourArray={progressBarIconColourArray}
+        />
+      }
       <Score
         score={score}
         setScore={setScore}
