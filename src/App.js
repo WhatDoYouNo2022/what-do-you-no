@@ -8,13 +8,12 @@ import Footer from "./Components/Footer.js";
 import Game from "./Components/Game.js";
 import SlideOutMenu from "./Components/SlideOutMenu.js";
 import LandingPage from "./Components/LandingPage.js";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook, faBookOpen } from "@fortawesome/free-solid-svg-icons";
 
 // Utilities
 
 // Styling
 import "./styles/sass/App.scss";
+import GameOverDisplay from "./Components/GameOverDisplay.js";
 
 function App() {
   // state variables
@@ -26,18 +25,7 @@ function App() {
   const [aboutOpen, setAboutOpen] = useState(false);
 
   // array to store initial list of words
-  let initialWords = [
-    // "flour",
-    // "break",
-    // "aisle",
-    // "tail",
-    // "maid",
-    // "waist",
-    // "pray",
-    // "some",
-    // "ate",
-    // "son",
-  ];
+  let initialWords = [];
 
   let updatedIconsColourArray = [
     "white-progress-icon",
@@ -118,6 +106,10 @@ function App() {
                 updatedIconsColourArray={updatedIconsColourArray}
               />
             }
+          />
+          <Route
+            path="/gamecomplete"
+            element={<GameOverDisplay />}
           />
         </Routes>
         {menuOpen ? (

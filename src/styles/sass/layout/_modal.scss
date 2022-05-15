@@ -18,7 +18,7 @@
     position: relative;
     background-color: $clr-white;
     padding: 15px;
-    width: 90%;
+    width: 300px;
     border: 10px solid $clr-purple;
     z-index: 60;
   }
@@ -34,7 +34,7 @@
 
 .modalOpen {
   left: 0;
-  transition: all 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .closeModal {

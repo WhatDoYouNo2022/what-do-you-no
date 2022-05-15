@@ -3,13 +3,14 @@
 .bookCover {
   width: 100%;
   max-width: 320px;
-  height: 550px;
+  height: 500px;
   background-color: $clr-purple;
-  margin: 50px auto 100px;
+  margin: 5px auto;
   padding-top: 5px;
   box-shadow: 15px 17px 24px -5px rgba(0, 0, 0, 0.38);
   -webkit-box-shadow: 15px 17px 24px -5px rgba(0, 0, 0, 0.38);
   position: relative;
+  border-radius: 3px;
 }
 
 .pagesContainer {
@@ -20,14 +21,17 @@
 
   .topPages {
     background-color: $clr-white;
-    width: 310px;
+    width: 299px;
     height: 20px;
+    margin-right: -5px;
+    border-radius: 5px;
   }
 
   .sidePages {
     background-color: $clr-white;
-    height: 545px;
+    height: 495px;
     width: 5px;
+    border-radius: 3px;
   }
 }
 
@@ -39,13 +43,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 25px;
+  margin-top: 15px;
 
   .bookTitle {
     @include fontSize($size-h1);
     width: 65%;
     @include lineHeight($height-h1);
-    margin: 40px auto 10px auto;
+    margin: 30px auto 10px auto;
   }
 
   .bookTitleUnderline {

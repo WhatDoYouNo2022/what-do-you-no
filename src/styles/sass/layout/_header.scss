@@ -41,9 +41,12 @@ header {
             padding-left: 20px;
         }
 
-        &:active,
         &:hover,
         &:focus {
+            color: rgba(207, 255, 49, 0.6);
+            border-bottom: 4px solid rgba(207, 255, 49, 0.6);
+        }
+        &:active {
             color: $clr-limeGreen;
             border-bottom: 4px solid $clr-limeGreen;
         }
