@@ -70,22 +70,25 @@ const LeaderboardForm = (props) => {
   return (
     <form>
       <label name="leaderboardForm" htmlFor="userNameInput">
-        Please enter a username for the Leaderboard. Caution: your username will
-        be visible to all users.
+        <ul>
+          <li>Please enter a username for the Leaderboard</li>
+          <li>Caution! Your username will be visible to all users</li>
+        </ul>
       </label>
       <input
         onChange={handleUserInput}
         value={userInput}
         name="leaderboardForm"
         type="text"
+        className="usernameInput"        
         id="usernameInput"
-        placeholder="Please enter a leaderboard name"
+        placeholder="Leaderboard username"
       />
-      <button onClick={handleSubmit} type="submit">
+      <button onClick={handleSubmit} type="submit" className="mainMenuControls">
         Submit score
       </button>
-      <button onClick={handleAnonSubmit}>Submit Anonymous Score</button>
-      <button onClick={handleDeclineSubmit}>No, thank you!</button>
+      <button onClick={handleAnonSubmit} className="mainMenuControls">Submit Anonymously</button>
+      <button onClick={handleDeclineSubmit} className="mainMenuControls">No, thanks!</button>
     </form>
   );
 };

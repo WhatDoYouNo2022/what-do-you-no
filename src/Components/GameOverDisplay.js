@@ -25,33 +25,40 @@ const GameOverDisplay = (props) => {
   const confettiColors = ["#6056f9", "#fff", "#cfff31"];
 
   return (
-    <>
+    <section className="gameOverDisplay">
       {/* confetti animation on game completion */}
       <Confetti 
         width={width}
         height={height}
         colors={confettiColors}
       />
-      <h2>Thanks for playing!</h2>
-      {scoreSubmitted && usernameDeclined === false ? (
-        <p>Your score has been submitted</p>
-      ) : usernameDeclined ? (
-        <p>Ok, we won't submit your score. Thanks for playing!</p>
-      ) : (
-        <LeaderboardForm
-          scoreSubmitted={scoreSubmitted}
-          setScoreSubmitted={setScoreSubmitted}
-          score={score}
-          setUsernameDeclined={setUsernameDeclined}
-          setModalIsOpen={setModalIsOpen}
-          setModalMessage={setModalMessage}
-          setModalTitle={setModalTitle}
-        />
-      )}
-      {scoreSubmitted || usernameDeclined ? (
-        <Link to="/">Restart Game</Link>
-      ) : null}
-    </>
+      <div className="bookCover backCover">
+        <div className="bookCoverContent">
+          <h2>Thanks for playing!</h2>
+          {scoreSubmitted && usernameDeclined === false ? (
+            <p>Your score has been submitted</p>
+          ) : usernameDeclined ? (
+            <p>Ok, we won't submit your score. Thanks for playing!</p>
+          ) : (
+            <LeaderboardForm
+              scoreSubmitted={scoreSubmitted}
+              setScoreSubmitted={setScoreSubmitted}
+              score={score}
+              setUsernameDeclined={setUsernameDeclined}
+              setModalIsOpen={setModalIsOpen}
+              setModalMessage={setModalMessage}
+              setModalTitle={setModalTitle}
+            />
+          )}
+          {scoreSubmitted || usernameDeclined ? (
+            <Link 
+            to="/"
+            className="restartGame"
+            >Restart Game</Link>
+          ) : null}`
+        </div>
+      </div>
+    </section>
   );
 };
 
