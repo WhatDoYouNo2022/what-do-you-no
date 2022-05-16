@@ -15,6 +15,7 @@ h1 {
     @include fontSize($size-mobile-h1);
     @include lineHeight($height-h1);
     text-align: center;
+    margin-top: 2px;
 }
 
 h2 {
@@ -29,7 +30,13 @@ h3, span.wordType {
 
 p,
 table, 
-li {
+li,
+input {
     @include fontSize($size-mobile-p);
     @include lineHeight($height-mobile-p);
+}
+
+.backCoverJuno {
+    @include fontSize($size-x-small);
+    @include lineHeight($height-x-small);
 }

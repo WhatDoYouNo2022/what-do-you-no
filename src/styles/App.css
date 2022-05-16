@@ -249,6 +249,7 @@ h1 {
   font-size: 1.75rem;
   line-height: 3rem;
   text-align: center;
+  margin-top: 2px;
 }
 
 h2 {
@@ -263,9 +264,15 @@ h3, span.wordType {
 
 p,
 table,
-li {
+li,
+input {
   font-size: 0.9rem;
   line-height: 1.35rem;
+}
+
+.backCoverJuno {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
 }
 
 /* Base Styles Partial */
@@ -343,7 +350,7 @@ a:visited {
 .mainMenuControls .buttonIcon,
 .nextQ .buttonIcon,
 .restartGame .buttonIcon {
-  padding: 0 10px;
+  padding: 0 5px;
 }
 
 h2, h3 {
@@ -505,6 +512,122 @@ header .tabActive .leaderboardIcon {
   height: 100px;
 }
 
+.modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: -5000px;
+  -webkit-transition: unset;
+  transition: unset;
+}
+.modal .modalMessageBox {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+  width: 300px;
+  border: 10px solid rgb(96, 86, 249);
+  z-index: 60;
+}
+.modal .flexContainer {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.modal p {
+  max-width: 400px;
+}
+
+.modalOpen {
+  left: 0;
+}
+
+.closeModal {
+  position: fixed;
+  cursor: pointer;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+/* LeaderboardForm styling partial */
+.usernameInput {
+  width: 80%;
+  margin: 10px auto;
+  background-color: rgb(96, 86, 249);
+  border: none;
+  border-bottom: 4px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+.usernameInput:focus, .usernameInput:hover, .usernameInput:active {
+  border-bottom: 4px solid rgb(207, 255, 49);
+  color: rgb(207, 255, 49);
+}
+.usernameInput:focus::-webkit-input-placeholder, .usernameInput:hover::-webkit-input-placeholder, .usernameInput:active::-webkit-input-placeholder {
+  color: rgb(207, 255, 49);
+  opacity: 1;
+}
+.usernameInput:focus::-moz-placeholder, .usernameInput:hover::-moz-placeholder, .usernameInput:active::-moz-placeholder {
+  color: rgb(207, 255, 49);
+  opacity: 1;
+}
+.usernameInput:focus:-ms-input-placeholder, .usernameInput:hover:-ms-input-placeholder, .usernameInput:active:-ms-input-placeholder {
+  color: rgb(207, 255, 49);
+  opacity: 1;
+}
+.usernameInput:focus::-ms-input-placeholder, .usernameInput:hover::-ms-input-placeholder, .usernameInput:active::-ms-input-placeholder {
+  color: rgb(207, 255, 49);
+  opacity: 1;
+}
+.usernameInput:focus::placeholder, .usernameInput:hover::placeholder, .usernameInput:active::placeholder {
+  color: rgb(207, 255, 49);
+  opacity: 1;
+}
+.usernameInput::-webkit-input-placeholder {
+  color: rgb(255, 255, 255);
+  opacity: 1;
+}
+.usernameInput::-moz-placeholder {
+  color: rgb(255, 255, 255);
+  opacity: 1;
+}
+.usernameInput:-ms-input-placeholder {
+  color: rgb(255, 255, 255);
+  opacity: 1;
+}
+.usernameInput::-ms-input-placeholder {
+  color: rgb(255, 255, 255);
+  opacity: 1;
+}
+.usernameInput::placeholder {
+  color: rgb(255, 255, 255);
+  opacity: 1;
+}
+
 /* Footer Specific Styles Partial */
 footer {
   background-color: rgb(96, 86, 249);
@@ -636,25 +759,10 @@ fieldset p {
   border: 10px solid rgb(96, 86, 249);
 }
 
-.bookCover.backCover h2 {
-  color: rgb(207, 255, 49);
-}
-.bookCover.backCover ul {
-  list-style-type: disc;
-  text-align: left;
-  list-style-position: inside;
-  padding-left: 15px;
-  padding-bottom: 15px;
-}
-.bookCover.backCover .usernameInput {
-  width: 95%;
-  margin: 25px auto;
-}
-
 /* Landing Page Partial */
 .bookCover {
   width: 100%;
-  max-width: 320px;
+  max-width: 305px;
   height: 500px;
   background-color: rgb(96, 86, 249);
   margin: 5px auto;
@@ -687,6 +795,7 @@ fieldset p {
   height: 495px;
   width: 5px;
   border-radius: 3px;
+  margin-right: 2px;
 }
 
 .bookCoverContent {
@@ -737,7 +846,12 @@ fieldset p {
   text-transform: uppercase;
 }
 
-.modal {
+.bookCover.backCover {
+  width: 100%;
+  max-width: 305px;
+  height: 500px;
+  margin-top: 5px;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -747,17 +861,33 @@ fieldset p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 100;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  left: -5000px;
-  -webkit-transition: unset;
-  transition: unset;
 }
-.modal .modalMessageBox {
-  text-align: center;
+.bookCover.backCover .pagesContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+.bookCover.backCover .pagesContainer .topBackPages {
+  background-color: rgb(255, 255, 255);
+  width: 299px;
+  height: 20px;
+  border-radius: 5px;
+  margin-left: -5px;
+}
+.bookCover.backCover .pagesContainer .sideBackPages {
+  background-color: rgb(255, 255, 255);
+  height: 495px;
+  width: 5px;
+  border-radius: 3px;
+  margin-left: 2px;
+}
+.bookCover.backCover .bookCoverContent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -768,35 +898,43 @@ fieldset p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
-  background-color: rgb(255, 255, 255);
-  padding: 15px;
-  width: 300px;
-  border: 10px solid rgb(96, 86, 249);
-  z-index: 60;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 95%;
+  width: 95%;
 }
-.modal .flexContainer {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.bookCover.backCover .bookCoverContent p {
+  width: 200px;
 }
-.modal p {
-  max-width: 400px;
+.bookCover.backCover .bookCoverContent h2 {
+  color: rgb(207, 255, 49);
+  margin-top: 2px;
 }
-
-.modalOpen {
-  left: 0;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+.bookCover.backCover .bookCoverContent ul {
+  list-style-type: disc;
+  text-align: left;
+  list-style-position: outside;
+  margin-left: 30px;
+  padding-bottom: 15px;
+  text-indent: 0px;
 }
-
-.closeModal {
-  position: fixed;
-  cursor: pointer;
-  width: 100vw;
-  height: 100vh;
-  z-index: 50;
-  background: transparent;
-  border: none;
-  outline: none;
+.bookCover.backCover .bookCoverContent li {
+  padding: 5px 0;
+}
+.bookCover.backCover .bookCoverContent .backCoverJuno {
+  color: rgb(207, 255, 49);
+  text-align: left;
+  position: absolute;
+  left: 5px;
+  bottom: -15px;
+}
+.bookCover.backCover .bookCoverContent .barcode {
+  width: 75px;
+  display: block;
+  height: auto;
+  padding: 5px;
+  position: absolute;
+  bottom: 0px;
+  right: -5px;
 }

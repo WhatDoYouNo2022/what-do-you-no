@@ -1,0 +1,26 @@
+/* LeaderboardForm styling partial */
+
+.usernameInput {
+    width: 80%;
+    margin: 10px auto;
+    background-color: $clr-purple;
+    border: none;
+    border-bottom: 4px solid $clr-white;
+    color: $clr-white;
+
+    &:focus,
+    &:hover,
+    &:active {
+        border-bottom: 4px solid $clr-limeGreen;
+        color: $clr-limeGreen;
+
+        &::placeholder {
+                color: $clr-limeGreen;
+                opacity: 1;
+        }
+    }
+    &::placeholder {
+        color: $clr-white;
+        opacity: 1;
+    }
+}

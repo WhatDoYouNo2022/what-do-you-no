@@ -5,6 +5,8 @@ import firebase from "../utils/Firebase";
 // Modules
 import { useState } from "react";
 import { getDatabase, ref, push } from "firebase/database";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar, faCircleXmark, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 const LeaderboardForm = (props) => {
   const {
@@ -68,11 +70,11 @@ const LeaderboardForm = (props) => {
   };
 
   return (
-    <form>
+    <form className="leaderboardForm">
       <label name="leaderboardForm" htmlFor="userNameInput">
         <ul>
           <li>Please enter a username for the Leaderboard</li>
-          <li>Caution! Your username will be visible to all users</li>
+          <li>Note: Your username will be visible to all users</li>
         </ul>
       </label>
       <input
@@ -82,13 +84,29 @@ const LeaderboardForm = (props) => {
         type="text"
         className="usernameInput"        
         id="usernameInput"
-        placeholder="Leaderboard username"
+        placeholder="Please enter a username"
       />
       <button onClick={handleSubmit} type="submit" className="mainMenuControls">
-        Submit score
+        <FontAwesomeIcon 
+          icon={faStar}
+          className="buttonIcon"
+        />
+        <p>Submit Score</p>
       </button>
-      <button onClick={handleAnonSubmit} className="mainMenuControls">Submit Anonymously</button>
-      <button onClick={handleDeclineSubmit} className="mainMenuControls">No, thanks!</button>
+      <button onClick={handleAnonSubmit} className="mainMenuControls">
+        <FontAwesomeIcon 
+          icon={faEyeSlash}
+          className="buttonIcon"
+        />
+        <p>Anonymous Submit</p>
+      </button>
+      <button onClick={handleDeclineSubmit} className="mainMenuControls">
+        <FontAwesomeIcon 
+          icon={faCircleXmark}
+          className="buttonIcon"
+        />
+        <p>No, thanks!</p>
+      </button>
     </form>
   );
 };
