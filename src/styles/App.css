@@ -296,7 +296,6 @@ main {
   max-width: 1260px;
   width: 95%;
   margin: 0 auto;
-  height: 100%;
 }
 
 .flexContainer {
@@ -353,7 +352,8 @@ a:visited {
   padding: 0 5px;
 }
 
-h2, h3 {
+h2,
+h3 {
   margin: 10px 0;
 }
 
@@ -695,6 +695,10 @@ footer p {
   margin-top: 20px;
 }
 
+.definition {
+  height: 100px;
+}
+
 .wordType {
   display: block;
   font-weight: bolder;
@@ -758,6 +762,32 @@ fieldset .squigglyText {
   font-weight: 400;
 }
 
+@media (min-width: 800px) {
+  .questionForm {
+    width: 70%;
+    height: 300px;
+  }
+
+  .questionNumber,
+.definition {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .score,
+.progress-bar {
+    width: 67%;
+    margin: 0 auto;
+  }
+
+  .progress-bar {
+    margin-top: 30px;
+  }
+
+  .score {
+    margin-bottom: 20px;
+  }
+}
 .aboutSection {
   background-color: rgb(255, 255, 255);
   margin-top: 40px;

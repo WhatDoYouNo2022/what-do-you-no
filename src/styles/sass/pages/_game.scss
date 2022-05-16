@@ -45,6 +45,10 @@
   margin-top: 20px;
 }
 
+.definition {
+  height: 100px;
+}
+
 .wordType {
   display: block;
   font-weight: bolder;
@@ -84,8 +88,8 @@ fieldset {
     border-right: 1px solid $clr-purple;
   }
 
-    .wordOneContainer,
-    .wordTwoContainer {
+  .wordOneContainer,
+  .wordTwoContainer {
     height: 100%;
     width: 100%;
     text-align: center;
@@ -98,5 +102,33 @@ fieldset {
     margin: 0;
     font-family: $ff-bookFont;
     font-weight: 400;
+  }
+}
+
+//media queries
+@media (min-width: 800px) {
+  .questionForm {
+    width: 70%;
+    height: 300px;
+  }
+
+  .questionNumber,
+  .definition {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .score,
+  .progress-bar {
+    width: 67%;
+    margin: 0 auto;
+  }
+
+  .progress-bar {
+    margin-top: 30px;
+  }
+
+  .score {
+    margin-bottom: 20px;
   }
 }
