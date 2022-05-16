@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookOpen, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const LandingPage = (props) => {
-  const { handleAboutButtonClick, initialWords } = props;
+  const { handleAboutButtonClick, initialWords, updatedIconsColourArray } = props;
 
   const handleStartGame = () => {
     initialWords.push(
@@ -20,6 +20,21 @@ const LandingPage = (props) => {
       "some",
       "ate",
       "son"
+    );
+
+    updatedIconsColourArray.splice(0, 10);
+    
+    updatedIconsColourArray.push(
+      "white-progress-icon",
+      "white-progress-icon",
+      "white-progress-icon",
+      "white-progress-icon",
+      "white-progress-icon",
+      "white-progress-icon",
+      "white-progress-icon",
+      "white-progress-icon",
+      "white-progress-icon",
+      "white-progress-icon",
     );
   };
 
