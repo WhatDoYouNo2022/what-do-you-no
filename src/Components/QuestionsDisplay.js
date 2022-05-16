@@ -26,6 +26,26 @@ const QuestionsDisplay = (props) => {
   let wordType;
   let definition;
 
+  // function to change colour of icon in progress bar (takes in answerType parameter which tells function if answer in correct or incorrect)
+  const handleIconColourUpdate = (answerType) => {
+    progressBarIconColourArray.map((item, index) => {
+      // checks to see if current index in array is equal to the question number user is currently on (since array index starts at zero and question number starts 1, check is for questionNumber - 1)
+      if (index === questionNumber - 1) {
+        if (answerType === "Incorrect") {
+          updatedIconsColourArray[index] = "red-progress-icon";
+        } else if (answerType === "Correct") {
+          updatedIconsColourArray[index] = "green-progress-icon";
+        }
+      }
+      return updatedIconsColourArray;
+    });
+
+    // update progress bar colour state to updated array per above
+    setProgressBarIconColourArray((prevState) => {
+      return updatedIconsColourArray;
+    });
+  };
+
   const correctAnswerChecker = () => {
     // Logic to check if answer is correct or not
     if (userAnswer === "") {
@@ -39,25 +59,6 @@ const QuestionsDisplay = (props) => {
       handleIconColourUpdate("Incorrect");
     }
     setScoreDenominator(scoreDenominator + 1);
-  };
-
-  // function to change colour of icon in progress bar (takes in answerType parameter which tells function if answer in correct or incorrect)
-  const handleIconColourUpdate = (answerType) => {
-    progressBarIconColourArray.map((item, index) => {
-      // checks to see if current index in array is equal to the question number user is currently on (since array index starts at zero and question number starts 1, check is for questionNumber - 1)
-      if (index === questionNumber - 1) {
-        if (answerType === "Incorrect") {
-          updatedIconsColourArray[index] = "red-progress-icon";
-        } else if (answerType === "Correct") {
-          updatedIconsColourArray[index] = "green-progress-icon";
-        }
-      }
-    });
-
-    // update progress bar colour state to updated array per above
-    setProgressBarIconColourArray((prevState) => {
-      return updatedIconsColourArray;
-    });
   };
 
   useEffect(() => {
