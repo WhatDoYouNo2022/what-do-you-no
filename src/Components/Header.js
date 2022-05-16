@@ -4,6 +4,7 @@ import {
   faCircleInfo,
   faMedal,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   const {
@@ -16,6 +17,7 @@ const Header = (props) => {
   return (
     <header>
       <div className="wrapper flexContainer">
+        <h1> <Link to="/">What Do You No?</Link></h1>
         <nav className="headerNav">
           <ul className="headerNavList">
             <li>
@@ -46,7 +48,6 @@ const Header = (props) => {
             </li>
           </ul>
         </nav>
-        <h1>What Do You No?</h1>
       </div>
     </header>
   );

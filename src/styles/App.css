@@ -313,6 +313,7 @@ ul {
 
 a {
   color: rgb(207, 255, 49);
+  text-decoration: none;
 }
 a:visited {
   color: rgb(207, 255, 49);
@@ -372,9 +373,9 @@ header h1 {
 }
 header .flexContainer {
   -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 header .headerNav {
   width: 100%;
