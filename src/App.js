@@ -27,18 +27,7 @@ function App() {
   // array to store initial list of words
   let initialWords = [];
 
-  let updatedIconsColourArray = [
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-  ];
+  let updatedIconsColourArray = [];
 
   // Event handler for the About navigation button
   const handleAboutButtonClick = () => {
@@ -95,6 +84,7 @@ function App() {
               <LandingPage
                 handleAboutButtonClick={handleAboutButtonClick}
                 initialWords={initialWords}
+                updatedIconsColourArray={updatedIconsColourArray}
               />
             }
           />
