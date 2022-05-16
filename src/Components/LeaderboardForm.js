@@ -22,7 +22,6 @@ const LeaderboardForm = (props) => {
 
   const handleUserInput = (event) => {
     setUserInput(event.target.value);
-    console.log(userInput);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
