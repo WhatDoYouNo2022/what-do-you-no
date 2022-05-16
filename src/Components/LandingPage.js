@@ -8,7 +8,10 @@ import { faBookOpen, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 const LandingPage = (props) => {
   const { handleAboutButtonClick, initialWords, updatedIconsColourArray } = props;
 
+  
   const handleStartGame = () => {
+    
+    // resets array of words to list of ten words
     initialWords.push(
       "flour",
       "break",
@@ -22,8 +25,10 @@ const LandingPage = (props) => {
       "son"
     );
 
+    // empties out icons colour array
     updatedIconsColourArray.splice(0, 10);
     
+    // resets array to have only white icons
     updatedIconsColourArray.push(
       "white-progress-icon",
       "white-progress-icon",
