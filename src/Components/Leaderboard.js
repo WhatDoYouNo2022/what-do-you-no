@@ -1,4 +1,5 @@
 // Leaderboard.js
+
 // Utilities
 import firebase from "../utils/Firebase";
 // Modules
@@ -6,7 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 import { getDatabase, onValue, ref } from "firebase/database";
-// Components
 
 const Leaderboard = (props) => {
   const [ dbData, setDbData ] = useState([]);
