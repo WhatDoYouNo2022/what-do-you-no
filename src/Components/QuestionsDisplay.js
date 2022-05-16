@@ -20,26 +20,14 @@ const QuestionsDisplay = (props) => {
     progressBarIconColourArray,
     setProgressBarIconColourArray,
     updatedIconsColourArray,
+    setModalIsOpen,
+    setModalTitle,
+    setModalMessage,
   } = props;
 
   let homophone;
   let wordType;
   let definition;
-
-  const correctAnswerChecker = () => {
-    // Logic to check if answer is correct or not
-    if (userAnswer === "") {
-      console.log("User Answer is Empty");
-    } else if (userAnswer === homophone) {
-      setScore((prevState) => {
-        return prevState + 1;
-      });
-      handleIconColourUpdate("Correct");
-    } else {
-      handleIconColourUpdate("Incorrect");
-    }
-    setScoreDenominator(scoreDenominator + 1);
-  };
 
   // function to change colour of icon in progress bar (takes in answerType parameter which tells function if answer in correct or incorrect)
   const handleIconColourUpdate = (answerType) => {
@@ -52,12 +40,28 @@ const QuestionsDisplay = (props) => {
           updatedIconsColourArray[index] = "green-progress-icon";
         }
       }
+      return updatedIconsColourArray;
     });
 
     // update progress bar colour state to updated array per above
     setProgressBarIconColourArray((prevState) => {
       return updatedIconsColourArray;
     });
+  };
+
+  const correctAnswerChecker = () => {
+    // Logic to check if answer is correct or not
+    if (wordOneChecked === true || wordTwoChecked === true) {
+      if (userAnswer === homophone) {
+        setScore((prevState) => {
+          return prevState + 1;
+        });
+        handleIconColourUpdate("Correct");
+      } else {
+        handleIconColourUpdate("Incorrect");
+      }
+      setScoreDenominator(scoreDenominator + 1);
+    }    
   };
 
   useEffect(() => {

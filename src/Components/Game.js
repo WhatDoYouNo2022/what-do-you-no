@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import GameOverDisplay from "./GameOverDisplay";
 import QuestionsDisplay from "./QuestionsDisplay";
@@ -22,7 +22,7 @@ const Game = (props) => {
 
   const [questionNumber, setQuestionNumber] = useState(1);
 
-  const [scoreDenominator, setScoreDenominator] = useState(-1);
+  const [scoreDenominator, setScoreDenominator] = useState(0);
 
   const [wordOneChecked, setWordOneChecked] = useState(false);
 
@@ -64,11 +64,6 @@ const Game = (props) => {
     "white-progress-icon",
   ]);
 
-  let updatedIconsArray = [];
-
-  //store homophone generated from API
-  let homophone;
-
   //modal window state
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -77,6 +72,11 @@ const Game = (props) => {
 
   //modal message
   const [modalMessage, setModalMessage] = useState("");
+
+  let updatedIconsArray = [];
+
+  //store homophone generated from API
+  let homophone;
 
   //close modal window function
   const handleCloseModal = () => {
@@ -108,21 +108,21 @@ const Game = (props) => {
       });
   }, [randomWord]);
 
-  const createRandomWord = () => {
+  const createRandomWord = useCallback(() => {
     const randomIndex = Math.floor(Math.random() * initialWords.length);
     const randomlyGeneratedWord = initialWords[randomIndex];
     initialWords.splice(randomIndex, 1);
     setRandomWord(randomlyGeneratedWord);
-  };
+  }, [initialWords]);
 
-  //Choose random word from words array function
+  // Choose random word from words array function
   useEffect(() => {
     createRandomWord();
-  }, []);
+  }, [createRandomWord]);
 
   const handleUserAnswerSelection = (event) => {
-    setUserAnswer(event.target.value);
     if (wordOneChecked === false && wordTwoChecked === false) {
+      setUserAnswer(event.target.value);
       if (event.target.id === "wordOne") {
         setWordOneChecked(true);
         setWordTwoChecked(false);
@@ -135,6 +135,7 @@ const Game = (props) => {
 
   const handleNextQuestion = () => {
     // check to see there are unused words remaining (game to continue)
+    console.log(initialWords);
     if (initialWords.length > 0) {
       if (wordOneChecked || wordTwoChecked) {
         // randomly generates position index for correct answer location
@@ -170,6 +171,7 @@ const Game = (props) => {
       } else {
         updatedIconsArray.push(faBook);
       }
+      return updatedIconsArray;
     });
 
     setProgressBarIconArray((prevState) => {
@@ -233,6 +235,9 @@ const Game = (props) => {
           progressBarIconColourArray={progressBarIconColourArray}
           setProgressBarIconColourArray={setProgressBarIconColourArray}
           updatedIconsColourArray={updatedIconsColourArray}
+          setModalIsOpen={setModalIsOpen}
+          setModalMessage={setModalMessage}
+          setModalTitle={setModalTitle}
         />
       )}
     </div>
