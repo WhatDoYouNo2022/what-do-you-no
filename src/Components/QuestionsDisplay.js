@@ -111,18 +111,23 @@ const QuestionsDisplay = (props) => {
                 <div className="wordOneContainer">
                   <label htmlFor="wordOne">
                     <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
-                    { wordOneChecked || wordTwoChecked ?
-                    wordOneChecked && randomQuestionPosition !== 1 ? <FontAwesomeIcon icon={faCircleCheck}/> : <FontAwesomeIcon icon={faCircleXmark}/> : null }
-                    {randomQuestionPosition === 1 ? randomWord : item.word}
+                    {
+                      randomQuestionPosition === 1 ? randomWord : item.word
+                    }
+                    { 
+                      wordOneChecked ?
+                        randomQuestionPosition === 1 ?
+                        <FontAwesomeIcon icon={faCircleXmark} className="incorrect-icon"/> : 
+                        <FontAwesomeIcon icon={faCircleCheck} className="correct-icon"/> :
+                      null 
+                    }
                     <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
                   </label>
                   <input
                     type="radio"
                     id="wordOne"
                     name="homophone"
-                    value={
-                      randomQuestionPosition === 1 ? randomWord : item.word
-                    }
+                    value={randomQuestionPosition === 1 ? randomWord : item.word}
                     checked={wordOneChecked}
                     onChange={(event) => handleChange(event)}
                   />
@@ -130,18 +135,25 @@ const QuestionsDisplay = (props) => {
                 <div className="wordTwoContainer">
                   <label htmlFor="wordTwo">
                     <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
-                    { wordOneChecked || wordTwoChecked ?
-                    wordTwoChecked && randomQuestionPosition === 1 ? <FontAwesomeIcon icon={faCircleCheck} /> : <FontAwesomeIcon icon={faCircleXmark} /> : null }
-                    {randomQuestionPosition === 1 ? item.word : randomWord}
+                    {
+                      randomQuestionPosition === 1 ? 
+                      item.word : 
+                      randomWord
+                    }
+                    {
+                      wordTwoChecked ?
+                        randomQuestionPosition === 1 ?
+                          <FontAwesomeIcon icon={faCircleCheck} className="correct-icon" /> :
+                          <FontAwesomeIcon icon={faCircleXmark} className="incorrect-icon" /> :
+                        null
+                    }
                     <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
                   </label>
                   <input
                     type="radio"
                     id="wordTwo"
                     name="homophone"
-                    value={
-                      randomQuestionPosition === 1 ? item.word : randomWord
-                    }
+                    value={randomQuestionPosition === 1 ? item.word : randomWord}
                     checked={wordTwoChecked}
                     onChange={(event) => handleChange(event)}
                   />

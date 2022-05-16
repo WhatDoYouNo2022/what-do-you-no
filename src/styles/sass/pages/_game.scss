@@ -99,4 +99,14 @@ fieldset {
     font-family: $ff-bookFont;
     font-weight: 400;
   }
+
+  .incorrect-icon {
+    padding-left: 5px;
+    color: $clr-red;
+  }
+
+  .correct-icon {
+    padding-left: 5px;
+    color: $clr-green;
+  }
 }
