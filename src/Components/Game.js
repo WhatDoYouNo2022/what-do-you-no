@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import GameOverDisplay from "./GameOverDisplay";
 import QuestionsDisplay from "./QuestionsDisplay";
@@ -108,17 +108,17 @@ const Game = (props) => {
       });
   }, [randomWord]);
 
-  const createRandomWord = () => {
+  const createRandomWord = useCallback(() => {
     const randomIndex = Math.floor(Math.random() * initialWords.length);
     const randomlyGeneratedWord = initialWords[randomIndex];
     initialWords.splice(randomIndex, 1);
     setRandomWord(randomlyGeneratedWord);
-  };
+  }, [initialWords]);
 
-  //Choose random word from words array function
+  // Choose random word from words array function
   useEffect(() => {
     createRandomWord();
-  }, []);
+  }, [createRandomWord]);
 
   const handleUserAnswerSelection = (event) => {
     setUserAnswer(event.target.value);
@@ -170,6 +170,7 @@ const Game = (props) => {
       } else {
         updatedIconsArray.push(faBook);
       }
+      return updatedIconsArray;
     });
 
     setProgressBarIconArray((prevState) => {
