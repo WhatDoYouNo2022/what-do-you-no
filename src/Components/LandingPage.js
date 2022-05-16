@@ -25,6 +25,8 @@ const LandingPage = (props) => {
       "son"
     );
 
+    console.log(initialWords);
+
     // empties out icons colour array
     updatedIconsColourArray.splice(0, 10);
     

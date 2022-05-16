@@ -20,6 +20,9 @@ const QuestionsDisplay = (props) => {
     progressBarIconColourArray,
     setProgressBarIconColourArray,
     updatedIconsColourArray,
+    setModalIsOpen,
+    setModalTitle,
+    setModalMessage,
   } = props;
 
   let homophone;
@@ -48,17 +51,17 @@ const QuestionsDisplay = (props) => {
 
   const correctAnswerChecker = () => {
     // Logic to check if answer is correct or not
-    if (userAnswer === "") {
-      console.log("User Answer is Empty");
-    } else if (userAnswer === homophone) {
-      setScore((prevState) => {
-        return prevState + 1;
-      });
-      handleIconColourUpdate("Correct");
-    } else {
-      handleIconColourUpdate("Incorrect");
-    }
-    setScoreDenominator(scoreDenominator + 1);
+    if (wordOneChecked === true || wordTwoChecked === true) {
+      if (userAnswer === homophone) {
+        setScore((prevState) => {
+          return prevState + 1;
+        });
+        handleIconColourUpdate("Correct");
+      } else {
+        handleIconColourUpdate("Incorrect");
+      }
+      setScoreDenominator(scoreDenominator + 1);
+    }    
   };
 
   useEffect(() => {
