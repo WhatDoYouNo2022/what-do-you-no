@@ -335,6 +335,13 @@ a:visited {
 .restartGame:visited {
   color: rgb(0, 0, 0);
 }
+.mainMenuControls:hover, .mainMenuControls:focus,
+.nextQ:hover,
+.nextQ:focus,
+.restartGame:hover,
+.restartGame:focus {
+  background-color: rgb(166, 205, 41);
+}
 .mainMenuControls .buttonIcon,
 .nextQ .buttonIcon,
 .restartGame .buttonIcon {
@@ -643,6 +650,13 @@ footer p {
   cursor: pointer;
   font-weight: bolder;
   padding: 0 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.questionForm label:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 fieldset {
