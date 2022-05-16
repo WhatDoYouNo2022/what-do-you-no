@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faCircleCheck, faCircleX } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight, faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 const QuestionsDisplay = (props) => {
   const {
@@ -20,9 +20,8 @@ const QuestionsDisplay = (props) => {
     progressBarIconColourArray,
     setProgressBarIconColourArray,
     updatedIconsColourArray,
-    setModalIsOpen,
-    setModalTitle,
-    setModalMessage,
+    answerCorrect,
+    setAnswerCorrect,
   } = props;
 
   let homophone;
@@ -57,8 +56,14 @@ const QuestionsDisplay = (props) => {
           return prevState + 1;
         });
         handleIconColourUpdate("Correct");
+        setAnswerCorrect((prevState) => {
+          return true;
+        });
       } else {
         handleIconColourUpdate("Incorrect");
+        setAnswerCorrect((prevState) => {
+          return false;
+        });
       }
       setScoreDenominator(scoreDenominator + 1);
     }    
@@ -106,6 +111,8 @@ const QuestionsDisplay = (props) => {
                 <div className="wordOneContainer">
                   <label htmlFor="wordOne">
                     <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
+                    { wordOneChecked || wordTwoChecked ?
+                    wordOneChecked && randomQuestionPosition !== 1 ? <FontAwesomeIcon icon={faCircleCheck}/> : <FontAwesomeIcon icon={faCircleXmark}/> : null }
                     {randomQuestionPosition === 1 ? randomWord : item.word}
                     <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
                   </label>
@@ -123,10 +130,9 @@ const QuestionsDisplay = (props) => {
                 <div className="wordTwoContainer">
                   <label htmlFor="wordTwo">
                     <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
+                    { wordOneChecked || wordTwoChecked ?
+                    wordTwoChecked && randomQuestionPosition === 1 ? <FontAwesomeIcon icon={faCircleCheck} /> : <FontAwesomeIcon icon={faCircleXmark} /> : null }
                     {randomQuestionPosition === 1 ? item.word : randomWord}
-                    {
-
-                    }
                     <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
                   </label>
                   <input

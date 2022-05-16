@@ -35,6 +35,8 @@ const Game = (props) => {
 
   const [randomQuestionPosition, setRandomQuestionPosition] = useState(1);
 
+  const [answerCorrect, setAnswerCorrect] = useState("");
+
   // array to store initial progress bar icons
   const [progressBarIconArray, setProgressBarIconArray] = useState([
     faBookOpen,
@@ -134,8 +136,10 @@ const Game = (props) => {
 
   const handleNextQuestion = () => {
     // check to see there are unused words remaining (game to continue)
-    console.log(initialWords);
     if (initialWords.length > 0) {
+      setAnswerCorrect((prevState) => {
+        return "";
+      });
       if (wordOneChecked || wordTwoChecked) {
         // randomly generates position index for correct answer location
         setRandomQuestionPosition((prevState) => {
@@ -234,9 +238,8 @@ const Game = (props) => {
           progressBarIconColourArray={progressBarIconColourArray}
           setProgressBarIconColourArray={setProgressBarIconColourArray}
           updatedIconsColourArray={updatedIconsColourArray}
-          setModalIsOpen={setModalIsOpen}
-          setModalMessage={setModalMessage}
-          setModalTitle={setModalTitle}
+          answerCorrect={answerCorrect}
+          setAnswerCorrect={setAnswerCorrect}
         />
       )}
     </div>
