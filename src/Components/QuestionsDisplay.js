@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight, faCircleCheck, faCircleX } from "@fortawesome/free-solid-svg-icons";
 
 const QuestionsDisplay = (props) => {
   const {
@@ -100,9 +100,10 @@ const QuestionsDisplay = (props) => {
                   Click on the word that matches the definition
                 </legend>
                 <div className="wordOneContainer">
-                  <p>Lorem ipsum dolor sit amet consectetur</p>
                   <label htmlFor="wordOne">
+                    <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
                     {randomQuestionPosition === 1 ? randomWord : item.word}
+                    <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
                   </label>
                   <input
                     type="radio"
@@ -114,12 +115,15 @@ const QuestionsDisplay = (props) => {
                     checked={wordOneChecked}
                     onChange={(event) => handleChange(event)}
                   />
-                  <p>Lorem ipsum dolor sit amet consectetur</p>
                 </div>
                 <div className="wordTwoContainer">
-                  <p>Lorem ipsum dolor sit amet consectetur</p>
                   <label htmlFor="wordTwo">
+                    <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
                     {randomQuestionPosition === 1 ? item.word : randomWord}
+                    {
+
+                    }
+                    <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
                   </label>
                   <input
                     type="radio"
@@ -131,7 +135,6 @@ const QuestionsDisplay = (props) => {
                     checked={wordTwoChecked}
                     onChange={(event) => handleChange(event)}
                   />
-                  <p>Lorem ipsum dolor sit amet consectetur</p>
                 </div>
               </fieldset>
             </form>

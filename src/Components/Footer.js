@@ -1,5 +1,3 @@
-// Modules
-// Components
 
 const Footer = () => {
     return (

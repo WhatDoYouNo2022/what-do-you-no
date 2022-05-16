@@ -5,8 +5,6 @@ import {
   faMedal,
 } from "@fortawesome/free-solid-svg-icons";
 
-// Components
-
 const Header = (props) => {
   const {
     handleLeaderboardClick,

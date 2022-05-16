@@ -1,5 +1,3 @@
-// Modules
-
 // Components
 import Leaderboard from "./Leaderboard.js";
 import About from "./About.js";

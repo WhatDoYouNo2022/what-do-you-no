@@ -8,7 +8,6 @@ import { faBook, faBookOpen } from "@fortawesome/free-solid-svg-icons";
 import ModalWindow from "./ModalWindow";
 
 const Game = (props) => {
-  //Examples of Homophone Pairs https://www.englishclub.com/pronunciation/homophones-list.htm
 
   const { initialWords, updatedIconsColourArray } = props;
 
