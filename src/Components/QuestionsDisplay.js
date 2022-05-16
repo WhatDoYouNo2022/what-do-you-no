@@ -115,7 +115,7 @@ const QuestionsDisplay = (props) => {
                 <div className="wordOneContainer">
                   <label htmlFor="wordOne">
                     <p className="squigglyText" aria-hidden="true">
-                      Lorem ipsum dolor sit amet consectetur
+                      Lorem lorem ipsum dolor sit amet consectetur
                     </p>
                     {wordOneChecked || wordTwoChecked ? (
                       wordOneChecked && randomQuestionPosition !== 1 ? (
@@ -126,7 +126,7 @@ const QuestionsDisplay = (props) => {
                     ) : null}
                     {randomQuestionPosition === 1 ? randomWord : item.word}
                     <p className="squigglyText" aria-hidden="true">
-                      Lorem ipsum dolor sit amet consectetur
+                      Lorem lorem ipsum dolor sit amet consectetur
                     </p>
                   </label>
                   <input
@@ -143,7 +143,7 @@ const QuestionsDisplay = (props) => {
                 <div className="wordTwoContainer">
                   <label htmlFor="wordTwo">
                     <p className="squigglyText" aria-hidden="true">
-                      Lorem ipsum dolor sit amet consectetur
+                      Lorem lorem ipsum dolor sit amet consectetur
                     </p>
                     {wordOneChecked || wordTwoChecked ? (
                       wordTwoChecked && randomQuestionPosition === 1 ? (
@@ -154,7 +154,7 @@ const QuestionsDisplay = (props) => {
                     ) : null}
                     {randomQuestionPosition === 1 ? item.word : randomWord}
                     <p className="squigglyText" aria-hidden="true">
-                      Lorem ipsum dolor sit amet consectetur
+                      Lorem lorem ipsum dolor sit amet consectetur
                     </p>
                   </label>
                   <input

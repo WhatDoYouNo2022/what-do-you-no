@@ -289,7 +289,7 @@ body {
 
 main {
   position: relative;
-  height: 100%;
+  margin-bottom: 80px;
 }
 
 .wrapper {
@@ -651,13 +651,13 @@ footer p {
 
 /* Home Page Specific Styles Partial */
 /* Game Page Specific Styles Partial */
-.progress-bar {
+.progressBar {
   background: rgb(96, 86, 249);
   width: 100%;
   height: 50px;
   margin-top: 25px;
 }
-.progress-bar ul {
+.progressBar ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -674,7 +674,7 @@ footer p {
 }
 
 .red-progress-icon {
-  color: rgb(214, 69, 65);
+  color: rgb(134, 21, 44);
 }
 
 .white-progress-icon {
@@ -696,22 +696,22 @@ footer p {
 }
 
 .definition {
-  height: 100px;
+  height: 120px;
 }
 
 .wordType {
   display: block;
-  font-weight: bolder;
+  font-weight: 500;
 }
 
 .questionForm {
-  margin: 50px auto 10px auto;
+  margin: 20px auto 10px auto;
   border-top: 4px solid rgb(96, 86, 249);
   border-bottom: 4px solid rgb(96, 86, 249);
   border-right: 8px solid rgb(96, 86, 249);
   border-left: 8px solid rgb(96, 86, 249);
   background-color: rgb(255, 255, 255);
-  height: 200px;
+  height: 220px;
 }
 .questionForm input[type=radio] {
   opacity: 0;
@@ -720,8 +720,7 @@ footer p {
 }
 .questionForm label {
   cursor: pointer;
-  font-weight: bolder;
-  padding: 0 10px;
+  font-weight: 500;
 }
 
 fieldset {
@@ -760,32 +759,49 @@ fieldset .squigglyText {
   margin: 0;
   font-family: "Redacted Script", cursive;
   font-weight: 400;
+  font-size: 0.8rem;
+  margin: 8px 0;
 }
 
-@media (min-width: 800px) {
-  .questionForm {
-    width: 70%;
-    height: 300px;
-  }
-
-  .questionNumber,
-.definition {
-    width: 70%;
-    margin: 0 auto;
-  }
-
+@media (min-width: 850px) {
   .score,
-.progress-bar {
-    width: 67%;
+.progressBar {
+    width: 57%;
     margin: 0 auto;
   }
 
-  .progress-bar {
+  .progressBar {
     margin-top: 30px;
   }
 
   .score {
     margin-bottom: 20px;
+  }
+
+  .questionNumber,
+.definition {
+    width: 60%;
+    margin: 0 auto;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+
+  .definition {
+    height: auto;
+  }
+
+  .questionForm {
+    width: 60%;
+    height: 338px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+
+  fieldSet .squigglyText {
+    font-size: 1.8rem;
+    margin: 30px 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
   }
 }
 .aboutSection {
