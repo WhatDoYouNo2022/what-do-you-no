@@ -319,7 +319,8 @@ a:visited {
 
 .mainMenuControls,
 .nextQ,
-.restartGame {
+.restartGame,
+.hideMenuButton {
   font-size: 1rem;
   font-family: "Lato", san-serif;
   background-color: rgb(207, 255, 49);
@@ -343,12 +344,14 @@ a:visited {
 }
 .mainMenuControls:visited,
 .nextQ:visited,
-.restartGame:visited {
+.restartGame:visited,
+.hideMenuButton:visited {
   color: rgb(0, 0, 0);
 }
 .mainMenuControls .buttonIcon,
 .nextQ .buttonIcon,
-.restartGame .buttonIcon {
+.restartGame .buttonIcon,
+.hideMenuButton .buttonIcon {
   padding: 0 5px;
 }
 
@@ -543,6 +546,9 @@ header .tabActive .leaderboardIcon {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
   background-color: rgb(255, 255, 255);
   padding: 15px;
@@ -555,7 +561,7 @@ header .tabActive .leaderboardIcon {
       -ms-flex-align: center;
           align-items: center;
 }
-.modal p {
+.modal .modalText {
   max-width: 400px;
 }
 
@@ -574,6 +580,20 @@ header .tabActive .leaderboardIcon {
   outline: none;
 }
 
+.hideMenuButton {
+  width: 70%;
+}
+
+@media (min-width: 850px) {
+  .modal .modalMessageBox {
+    width: 40%;
+    height: 40%;
+  }
+
+  .hideMenuButton {
+    width: 60%;
+  }
+}
 /* LeaderboardForm styling partial */
 .usernameInput {
   width: 80%;

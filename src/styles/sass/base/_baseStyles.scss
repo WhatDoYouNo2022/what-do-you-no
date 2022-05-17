@@ -39,7 +39,8 @@ a {
 
 .mainMenuControls,
 .nextQ,
-.restartGame {
+.restartGame,
+.hideMenuButton {
   @include fontSize($size-desktop-p);
   font-family: $ff-bodyFont;
   background-color: $clr-limeGreen;
