@@ -8,10 +8,10 @@ import Footer from "./Components/Footer.js";
 import Game from "./Components/Game.js";
 import SlideOutMenu from "./Components/SlideOutMenu.js";
 import LandingPage from "./Components/LandingPage.js";
+import GameOverDisplay from "./Components/GameOverDisplay.js";
 
 // Styling
 import "./styles/sass/App.scss";
-import GameOverDisplay from "./Components/GameOverDisplay.js";
 
 function App() {
   // state variables
