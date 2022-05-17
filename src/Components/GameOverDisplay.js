@@ -21,11 +21,16 @@ const GameOverDisplay = (props) => {
     setModalIsOpen,
     setModalMessage,
     setModalTitle,
+    setGameIsStarted
   } = props;
   const [ usernameDeclined, setUsernameDeclined ] = useState(false);
   const { width, height } = useWindowSize();
   // An array to hold the colors for the confetti.
   const confettiColors = ["#6056f9", "#fff", "#cfff31"]
+
+  const handleGameRestart = () => {
+    setGameIsStarted(false);
+  }
 
   return (
     <section className="gameOverDisplay">
@@ -34,7 +39,7 @@ const GameOverDisplay = (props) => {
           width={width}
           height={height}
           colors={confettiColors}
-          numberOfPieces={2500}
+          numberOfPieces={1000}
           recycle={false}
         />
       <div className="bookCover backCover">
@@ -66,8 +71,8 @@ const GameOverDisplay = (props) => {
             />
           )}
           { scoreSubmitted || usernameDeclined ? (
-            <Link 
-              to="/"
+            <button
+              onClick={handleGameRestart}
               className="restartGame"
             >
               <FontAwesomeIcon 
@@ -75,7 +80,7 @@ const GameOverDisplay = (props) => {
               className="buttonIcon"
               />
               <p>Restart Game</p>
-            </Link>
+            </button>
           ) : null
           }
             <img
