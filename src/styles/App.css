@@ -686,6 +686,7 @@ footer p {
   background-color: rgb(96, 86, 249);
   color: rgb(255, 255, 255);
   margin: 0;
+  margin-top: 5px;
 }
 .score .scoreIcon {
   padding-right: 5px;
@@ -776,6 +777,7 @@ fieldset .squigglyText {
 
   .score {
     margin-bottom: 20px;
+    margin-top: 5px;
   }
 
   .questionNumber,
