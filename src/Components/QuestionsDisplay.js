@@ -101,7 +101,7 @@ const QuestionsDisplay = (props) => {
       {data.map((item, index) => {
         homophone = item.word;
         return (
-          <div key={index}>
+          <div className="questionContent" key={index}>
             {evaluateWordType(item)}
             <p className="definition">
               <span className="wordType">{wordType} </span>

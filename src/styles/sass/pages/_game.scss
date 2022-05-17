@@ -116,6 +116,16 @@ fieldset {
   }
 }
 
+.incorrect-icon {
+  padding-left: 5px;
+  color: $clr-red;
+}
+
+.correct-icon {
+  padding-left: 5px;
+  color: $clr-green;
+}
+
 //Media queries
 @media (min-width: 850px) {
   //Score and progress bar
@@ -160,13 +170,4 @@ fieldset {
     }
   }
 
-  .incorrect-icon {
-    padding-left: 5px;
-    color: $clr-red;
-  }
-
-  .correct-icon {
-    padding-left: 5px;
-    color: $clr-green;
-  }
 }
