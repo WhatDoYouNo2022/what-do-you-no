@@ -61,6 +61,11 @@ a {
     color: $clr-black;
   }
 
+  &:hover,
+  &:focus {
+    background-color: rgb(166, 205, 41);
+  }
+
   .buttonIcon {
     padding: 0 5px;
   }
