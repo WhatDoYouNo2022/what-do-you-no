@@ -72,10 +72,7 @@
 
   label {
     cursor: pointer;
-<<<<<<< HEAD
-    font-weight: 500;
-=======
-    font-weight: bolder;
+    font-weight: $fw-bold;
     padding: 0 10px;
     height: 100%;
     display: flex;
@@ -85,7 +82,6 @@
     &:hover {
       background-color: rgba(0, 0, 0, 0.1);
     }
->>>>>>> feature/answer-selection-user-feedback
   }
 }
 

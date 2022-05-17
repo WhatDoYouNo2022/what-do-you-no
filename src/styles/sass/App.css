@@ -284,14 +284,13 @@ body {
 
 main {
   position: relative;
-  height: 100%;
+  margin-bottom: 80px;
 }
 
 .wrapper {
   max-width: 1260px;
   width: 95%;
   margin: 0 auto;
-  height: 100%;
 }
 
 .flexContainer {
@@ -314,7 +313,8 @@ a:visited {
 
 .mainMenuControls,
 .nextQ,
-.restartGame {
+.restartGame,
+.hideMenuButton {
   font-size: 1rem;
   font-family: "Lato", san-serif;
   background-color: rgb(207, 255, 49);
@@ -332,23 +332,28 @@ a:visited {
 }
 .mainMenuControls:visited,
 .nextQ:visited,
-.restartGame:visited {
+.restartGame:visited,
+.hideMenuButton:visited {
   color: rgb(0, 0, 0);
 }
 .mainMenuControls:hover, .mainMenuControls:focus,
 .nextQ:hover,
 .nextQ:focus,
 .restartGame:hover,
-.restartGame:focus {
+.restartGame:focus,
+.hideMenuButton:hover,
+.hideMenuButton:focus {
   background-color: rgb(166, 205, 41);
 }
 .mainMenuControls .buttonIcon,
 .nextQ .buttonIcon,
-.restartGame .buttonIcon {
+.restartGame .buttonIcon,
+.hideMenuButton .buttonIcon {
   padding: 0 5px;
 }
 
-h2, h3 {
+h2,
+h3 {
   margin: 10px 0;
 }
 
@@ -500,6 +505,7 @@ header .tabActive .leaderboardIcon {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: relative;
   background-color: rgb(255, 255, 255);
   padding: 15px;
@@ -510,7 +516,7 @@ header .tabActive .leaderboardIcon {
 .modal .flexContainer {
   align-items: center;
 }
-.modal p {
+.modal .modalText {
   max-width: 400px;
 }
 
@@ -529,6 +535,20 @@ header .tabActive .leaderboardIcon {
   outline: none;
 }
 
+.hideMenuButton {
+  width: 70%;
+}
+
+@media (min-width: 850px) {
+  .modal .modalMessageBox {
+    width: 40%;
+    height: 40%;
+  }
+
+  .hideMenuButton {
+    width: 60%;
+  }
+}
 /* LeaderboardForm styling partial */
 .usernameInput {
   width: 80%;
@@ -588,13 +608,13 @@ footer p {
 
 /* Home Page Specific Styles Partial */
 /* Game Page Specific Styles Partial */
-.progress-bar {
+.progressBar {
   background: rgb(96, 86, 249);
   width: 100%;
   height: 50px;
   margin-top: 25px;
 }
-.progress-bar ul {
+.progressBar ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -618,6 +638,7 @@ footer p {
   background-color: rgb(96, 86, 249);
   color: rgb(255, 255, 255);
   margin: 0;
+  margin-top: 5px;
 }
 .score .scoreIcon {
   padding-right: 5px;
@@ -627,19 +648,23 @@ footer p {
   margin-top: 20px;
 }
 
+.definition {
+  height: 120px;
+}
+
 .wordType {
   display: block;
-  font-weight: bolder;
+  font-weight: 500;
 }
 
 .questionForm {
-  margin: 50px auto 10px auto;
+  margin: 20px auto 10px auto;
   border-top: 4px solid rgb(96, 86, 249);
   border-bottom: 4px solid rgb(96, 86, 249);
   border-right: 8px solid rgb(96, 86, 249);
   border-left: 8px solid rgb(96, 86, 249);
   background-color: rgb(255, 255, 255);
-  height: 200px;
+  height: 220px;
 }
 .questionForm input[type=radio] {
   opacity: 0;
@@ -648,7 +673,7 @@ footer p {
 }
 .questionForm label {
   cursor: pointer;
-  font-weight: bolder;
+  font-weight: 700;
   padding: 0 10px;
   height: 100%;
   display: flex;
@@ -683,16 +708,59 @@ fieldset .squigglyText {
   margin: 0;
   font-family: "Redacted Script", cursive;
   font-weight: 400;
-}
-fieldset .incorrect-icon {
-  padding-left: 5px;
-  color: rgb(214, 69, 65);
-}
-fieldset .correct-icon {
-  padding-left: 5px;
-  color: rgb(55, 124, 55);
+  font-size: 0.8rem;
+  margin: 8px 0;
 }
 
+@media (min-width: 850px) {
+  .score,
+.progressBar {
+    width: 57%;
+    margin: 0 auto;
+  }
+
+  .progressBar {
+    margin-top: 30px;
+  }
+
+  .score {
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+
+  .questionNumber,
+.definition {
+    width: 60%;
+    margin: 0 auto;
+    transition: 0.5s;
+  }
+
+  .definition {
+    height: auto;
+  }
+
+  .questionForm {
+    width: 60%;
+    height: 338px;
+    transition: 0.5s;
+  }
+
+  fieldSet .squigglyText {
+    font-size: 1.8rem;
+    margin: 30px 0;
+    transition: 0.5s;
+  }
+
+  .incorrect-icon {
+    padding-left: 5px;
+    color: rgb(214, 69, 65);
+  }
+
+  .correct-icon {
+    padding-left: 5px;
+    color: rgb(55, 124, 55);
+  }
+}
 .aboutSection {
   background-color: rgb(255, 255, 255);
   margin-top: 40px;
