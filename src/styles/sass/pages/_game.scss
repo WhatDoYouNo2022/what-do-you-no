@@ -2,7 +2,7 @@
 
 // Progress Bar
 
-.progress-bar {
+.progressBar {
   background: $clr-purple;
   width: 100%;
   height: 50px;
@@ -29,12 +29,13 @@
 }
 
 // Score
-
 .score {
   text-align: center;
   background-color: $clr-purple;
   color: $clr-white;
   margin: 0;
+  margin-top: 5px;
+
   .scoreIcon {
     padding-right: 5px;
   }
@@ -45,19 +46,23 @@
   margin-top: 20px;
 }
 
+.definition {
+  height: 120px;
+}
+
 .wordType {
   display: block;
-  font-weight: bolder;
+  font-weight: 500;
 }
 
 .questionForm {
-  margin: 50px auto 10px auto;
+  margin: 20px auto 10px auto;
   border-top: 4px solid $clr-purple;
   border-bottom: 4px solid $clr-purple;
   border-right: 8px solid $clr-purple;
   border-left: 8px solid $clr-purple;
   background-color: $clr-white;
-  height: 200px;
+  height: 220px;
 
   input[type="radio"] {
     opacity: 0;
@@ -67,8 +72,7 @@
 
   label {
     cursor: pointer;
-    font-weight: bolder;
-    padding: 0 10px;
+    font-weight: 500;
   }
 }
 
@@ -84,8 +88,8 @@ fieldset {
     border-right: 1px solid $clr-purple;
   }
 
-    .wordOneContainer,
-    .wordTwoContainer {
+  .wordOneContainer,
+  .wordTwoContainer {
     height: 100%;
     width: 100%;
     text-align: center;
@@ -98,5 +102,52 @@ fieldset {
     margin: 0;
     font-family: $ff-bookFont;
     font-weight: 400;
+    font-size: 0.8rem;
+    margin: 8px 0;
+  }
+}
+
+//Media queries
+@media (min-width: 850px) {
+  //Score and progress bar
+  .score,
+  .progressBar {
+    width: 57%;
+    margin: 0 auto;
+  }
+
+  .progressBar {
+    margin-top: 30px;
+  }
+
+  .score {
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+
+  //Questions
+  .questionNumber,
+  .definition {
+    width: 60%;
+    margin: 0 auto;
+    transition: 0.5s;
+  }
+
+  .definition {
+    height: auto;
+  }
+
+  .questionForm {
+    width: 60%;
+    height: 338px;
+    transition: 0.5s;
+  }
+
+  fieldSet {
+    .squigglyText {
+      font-size: 1.8rem;
+      margin: 30px 0;
+      transition: 0.5s;
+    }
   }
 }

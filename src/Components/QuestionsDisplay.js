@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronRight,
+  faCircleCheck,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons";
 
 const QuestionsDisplay = (props) => {
   const {
@@ -66,7 +70,7 @@ const QuestionsDisplay = (props) => {
         });
       }
       setScoreDenominator(scoreDenominator + 1);
-    }    
+    }
   };
 
   useEffect(() => {
@@ -99,7 +103,7 @@ const QuestionsDisplay = (props) => {
         return (
           <div key={index}>
             {evaluateWordType(item)}
-            <p>
+            <p className="definition">
               <span className="wordType">{wordType} </span>
               {definition}.
             </p>
@@ -110,11 +114,20 @@ const QuestionsDisplay = (props) => {
                 </legend>
                 <div className="wordOneContainer">
                   <label htmlFor="wordOne">
-                    <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
-                    { wordOneChecked || wordTwoChecked ?
-                    wordOneChecked && randomQuestionPosition !== 1 ? <FontAwesomeIcon icon={faCircleCheck}/> : <FontAwesomeIcon icon={faCircleXmark}/> : null }
+                    <p className="squigglyText" aria-hidden="true">
+                      Lorem lorem ipsum dolor sit amet consectetur
+                    </p>
+                    {wordOneChecked || wordTwoChecked ? (
+                      wordOneChecked && randomQuestionPosition !== 1 ? (
+                        <FontAwesomeIcon icon={faCircleCheck} />
+                      ) : (
+                        <FontAwesomeIcon icon={faCircleXmark} />
+                      )
+                    ) : null}
                     {randomQuestionPosition === 1 ? randomWord : item.word}
-                    <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
+                    <p className="squigglyText" aria-hidden="true">
+                      Lorem lorem ipsum dolor sit amet consectetur
+                    </p>
                   </label>
                   <input
                     type="radio"
@@ -129,11 +142,20 @@ const QuestionsDisplay = (props) => {
                 </div>
                 <div className="wordTwoContainer">
                   <label htmlFor="wordTwo">
-                    <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
-                    { wordOneChecked || wordTwoChecked ?
-                    wordTwoChecked && randomQuestionPosition === 1 ? <FontAwesomeIcon icon={faCircleCheck} /> : <FontAwesomeIcon icon={faCircleXmark} /> : null }
+                    <p className="squigglyText" aria-hidden="true">
+                      Lorem lorem ipsum dolor sit amet consectetur
+                    </p>
+                    {wordOneChecked || wordTwoChecked ? (
+                      wordTwoChecked && randomQuestionPosition === 1 ? (
+                        <FontAwesomeIcon icon={faCircleCheck} />
+                      ) : (
+                        <FontAwesomeIcon icon={faCircleXmark} />
+                      )
+                    ) : null}
                     {randomQuestionPosition === 1 ? item.word : randomWord}
-                    <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
+                    <p className="squigglyText" aria-hidden="true">
+                      Lorem lorem ipsum dolor sit amet consectetur
+                    </p>
                   </label>
                   <input
                     type="radio"
