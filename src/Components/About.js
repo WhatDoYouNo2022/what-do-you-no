@@ -24,7 +24,6 @@ const About = (props) => {
           </div> {/* .instructions END */}
           <hr />
           <div className="credits">
-            <div className="creators">
               <p>
                 <strong>What Do You No?</strong> was created by <a href="https://www.alexandrafriedman.ca/"
                 target="_blank"
@@ -45,8 +44,6 @@ const About = (props) => {
                 >Datamuse API
                 </a>
               </p>
-            </div> {/* .creators END */}
-            <div className="photo">
               <img
                 src={Image}
                 alt="Dictionaries sit on a table with an apple and a dip pen amongst foliage"
@@ -65,7 +62,6 @@ const About = (props) => {
                   Unsplash
                 </a>
               </p>
-            </div> {/* .photo END */}
           </div> {/* .credits END */}
         </div> {/* .aboutTopMenu END */}
         <div className="lowerMenu">
