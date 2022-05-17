@@ -1,0 +1,41 @@
+//Media queries
+
+@media (min-width: 850px) {
+  //Score and progress bar
+  .score,
+  .progressBar {
+    width: 57%;
+    margin: 0 auto;
+  }
+
+  .score {
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+
+  //Questions
+  .questionNumber,
+  .definition {
+    width: 60%;
+    margin: 0 auto;
+    transition: 0.5s;
+  }
+
+  .definition {
+    height: auto;
+  }
+
+  .questionForm {
+    width: 60%;
+    height: 338px;
+    transition: 0.5s;
+  }
+
+  fieldSet {
+    .squigglyText {
+      font-size: 1.8rem;
+      margin: 30px 0;
+      transition: 0.5s;
+    }
+  }
+}
