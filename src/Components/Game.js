@@ -143,10 +143,6 @@ const Game = (props) => {
   const handleNextQuestion = () => {
     // check to see there are unused words remaining (game to continue)
     if (initialWords.length > 0) {
-      if (initialWords.length === 1) {
-        onFinalQuestion = true;
-        console.log(onFinalQuestion);
-      }
       setAnswerCorrect((prevState) => {
         return "";
       });
@@ -193,7 +189,7 @@ const Game = (props) => {
   };
 
   const handleChange = (event) => {
-    // console.log(event.target);
+    return null;
   };
 
   return (
