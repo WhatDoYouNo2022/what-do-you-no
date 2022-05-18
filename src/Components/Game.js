@@ -8,12 +8,7 @@ import { faBook, faBookOpen } from "@fortawesome/free-solid-svg-icons";
 import ModalWindow from "./ModalWindow";
 
 const Game = (props) => {
-
-  const { 
-    initialWords,
-    updatedIconsColourArray,
-    setGameIsStarted
-  } = props;
+  const { initialWords, updatedIconsColourArray, setGameIsStarted } = props;
 
   //store data from API
   const [data, setData] = useState([]);
@@ -57,16 +52,16 @@ const Game = (props) => {
 
   // array to store icon classes
   const [progressBarIconColourArray, setProgressBarIconColourArray] = useState([
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
   ]);
 
   //modal window state
@@ -203,13 +198,13 @@ const Game = (props) => {
           handleCloseModal={handleCloseModal}
         />
       ) : null}
-      {isGameOver ? null :
+      {isGameOver ? null : (
         <ProgressBar
           questionNumber={questionNumber}
           progressBarIconArray={progressBarIconArray}
           progressBarIconColourArray={progressBarIconColourArray}
         />
-      }
+      )}
       <Score
         score={score}
         setScore={setScore}

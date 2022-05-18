@@ -6,7 +6,6 @@
   background: $clr-purple;
   width: 100%;
   height: 50px;
-  margin-top: 25px;
 
   ul {
     display: flex;
@@ -16,15 +15,15 @@
   }
 }
 
-.green-progress-icon {
+.greenProgressIcon {
   color: $clr-limeGreen;
 }
 
-.red-progress-icon {
+.redProgressIcon {
   color: $clr-red;
 }
 
-.white-progress-icon {
+.whiteProgressIcon {
   color: $clr-white;
 }
 
@@ -111,63 +110,17 @@ fieldset {
     margin: 0;
     font-family: $ff-bookFont;
     font-weight: 400;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     margin: 8px 0;
   }
 }
 
-.incorrect-icon {
+.incorrectIcon {
   padding-left: 5px;
   color: $clr-red;
 }
 
-.correct-icon {
+.correctIcon {
   padding-left: 5px;
   color: $clr-green;
-}
-
-//Media queries
-@media (min-width: 850px) {
-  //Score and progress bar
-  .score,
-  .progressBar {
-    width: 57%;
-    margin: 0 auto;
-  }
-
-  .progressBar {
-    margin-top: 30px;
-  }
-
-  .score {
-    margin-bottom: 20px;
-    margin-top: 5px;
-  }
-
-  //Questions
-  .questionNumber,
-  .definition {
-    width: 60%;
-    margin: 0 auto;
-    transition: 0.5s;
-  }
-
-  .definition {
-    height: auto;
-  }
-
-  .questionForm {
-    width: 60%;
-    height: 338px;
-    transition: 0.5s;
-  }
-
-  fieldSet {
-    .squigglyText {
-      font-size: 1.8rem;
-      margin: 30px 0;
-      transition: 0.5s;
-    }
-  }
-
 }
