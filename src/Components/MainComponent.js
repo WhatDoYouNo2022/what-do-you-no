@@ -1,9 +1,5 @@
 // MainComponent.js
 
-// Modules
-import { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
-
 // Components
 import LandingPage from "./LandingPage.js";
 import Game from "./Game.js";
@@ -18,8 +14,7 @@ const MainComponent = (props) => {
 
     let initialWords = [];
     let updatedIconsColourArray = [];
-    // state variable to hold an array of initial words
-    // const [ initialWords, setInitialWords ] = useState([])
+    // variable to hold an array of initial words to find their homophones
     initialWords.push(
             "flour",
             "break",

@@ -1,13 +1,11 @@
 // Modules
 import { useState } from "react";
-import { Route, Routes, Outlet } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 // Components
 import Header from "./Components/Header.js";
 import Footer from "./Components/Footer.js";
-import Game from "./Components/Game.js";
 import SlideOutMenu from "./Components/SlideOutMenu.js";
-import LandingPage from "./Components/LandingPage.js";
 
 // Styling
 import "./styles/sass/App.scss";

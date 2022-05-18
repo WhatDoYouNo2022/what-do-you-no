@@ -1,10 +1,8 @@
 //LandingPage.js
 
 //Modules
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookOpen, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { initializeApp } from "firebase/app";
 
 const LandingPage = (props) => {
   const { 
