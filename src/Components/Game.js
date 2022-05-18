@@ -9,7 +9,11 @@ import ModalWindow from "./ModalWindow";
 
 const Game = (props) => {
 
-  const { initialWords, updatedIconsColourArray } = props;
+  const { 
+    initialWords,
+    updatedIconsColourArray,
+    setGameIsStarted
+  } = props;
 
   //store data from API
   const [data, setData] = useState([]);
@@ -78,6 +82,8 @@ const Game = (props) => {
 
   //store homophone generated from API
   let homophone;
+
+  let onFinalQuestion = false;
 
   //close modal window function
   const handleCloseModal = () => {
@@ -183,7 +189,7 @@ const Game = (props) => {
   };
 
   const handleChange = (event) => {
-    // console.log(event.target);
+    return null;
   };
 
   return (
@@ -217,6 +223,7 @@ const Game = (props) => {
           setModalIsOpen={setModalIsOpen}
           setModalMessage={setModalMessage}
           setModalTitle={setModalTitle}
+          setGameIsStarted={setGameIsStarted}
         />
       ) : (
         <QuestionsDisplay
@@ -240,6 +247,7 @@ const Game = (props) => {
           updatedIconsColourArray={updatedIconsColourArray}
           answerCorrect={answerCorrect}
           setAnswerCorrect={setAnswerCorrect}
+          onFinalQuestion={onFinalQuestion}
         />
       )}
     </div>

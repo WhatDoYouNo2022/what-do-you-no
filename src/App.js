@@ -5,10 +5,9 @@ import { Route, Routes } from "react-router-dom";
 // Components
 import Header from "./Components/Header.js";
 import Footer from "./Components/Footer.js";
-import Game from "./Components/Game.js";
 import SlideOutMenu from "./Components/SlideOutMenu.js";
-import LandingPage from "./Components/LandingPage.js";
 import GameOverDisplay from "./Components/GameOverDisplay.js";
+import MainComponent from "./Components/MainComponent.js";
 
 // Styling
 import "./styles/sass/App.scss";
@@ -22,10 +21,8 @@ function App() {
   // state of whether the about section is to be displayed.
   const [aboutOpen, setAboutOpen] = useState(false);
 
-  // array to store initial list of words
-  let initialWords = [];
-
-  let updatedIconsColourArray = [];
+   // state to change the main content from landing to game
+  const [ gameIsStarted, setGameIsStarted ] = useState(false)
 
   // Event handler for the About navigation button
   const handleAboutButtonClick = () => {
@@ -79,21 +76,11 @@ function App() {
           <Route
             path="/"
             element={
-              <LandingPage
-                handleAboutButtonClick={handleAboutButtonClick}
-                initialWords={initialWords}
-                updatedIconsColourArray={updatedIconsColourArray}
-              />
-            }
-          />
-          <Route
-            path="/gamepage"
-            element={
-              <Game
-                initialWords={initialWords}
-                updatedIconsColourArray={updatedIconsColourArray}
-              />
-            }
+            <MainComponent
+              handleAboutButtonClick={handleAboutButtonClick}
+              gameIsStarted={gameIsStarted}
+              setGameIsStarted={setGameIsStarted}
+            />}
           />
           <Route
             path="/gamecomplete"

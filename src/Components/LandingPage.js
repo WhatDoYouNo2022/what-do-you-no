@@ -1,46 +1,18 @@
 //LandingPage.js
 
 //Modules
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookOpen, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const LandingPage = (props) => {
-  const { handleAboutButtonClick, initialWords, updatedIconsColourArray } = props;
+  const { 
+    handleAboutButtonClick,
+    setGameIsStarted,
+  } = props;
 
   
   const handleStartGame = () => {
-    
-    // resets array of words to list of ten words
-    initialWords.push(
-      "flour",
-      "break",
-      "aisle",
-      "tail",
-      "maid",
-      "waist",
-      "pray",
-      "some",
-      "ate",
-      "son"
-    );
-
-    // empties out icons colour array
-    updatedIconsColourArray.splice(0, 10);
-    
-    // resets array to have only white icons
-    updatedIconsColourArray.push(
-      "white-progress-icon",
-      "white-progress-icon",
-      "white-progress-icon",
-      "white-progress-icon",
-      "white-progress-icon",
-      "white-progress-icon",
-      "white-progress-icon",
-      "white-progress-icon",
-      "white-progress-icon",
-      "white-progress-icon",
-    );
+    setGameIsStarted(true);
   };
 
   return (
@@ -67,9 +39,8 @@ const LandingPage = (props) => {
               />
               <p>Instructions</p>
             </button>
-            <Link
+            <button
               className="mainMenuControls"
-              to="/gamepage"
               onClick={handleStartGame}
             >
               <FontAwesomeIcon
@@ -78,7 +49,7 @@ const LandingPage = (props) => {
                 aria-hidden="true"
               />
               <p>Start</p>
-            </Link>
+            </button>
           </div>
           <h3 className="junoPress">
             <a

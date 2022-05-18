@@ -24,7 +24,6 @@ const QuestionsDisplay = (props) => {
     progressBarIconColourArray,
     setProgressBarIconColourArray,
     updatedIconsColourArray,
-    answerCorrect,
     setAnswerCorrect,
   } = props;
 

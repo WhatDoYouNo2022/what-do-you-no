@@ -17,7 +17,9 @@ const Header = (props) => {
   return (
     <header>
       <div className="wrapper flexContainer">
-        <h1> <Link to="/">What Do You No?</Link></h1>
+        <Link to="/">
+            <h1>What Do You No?</h1>
+        </Link>
         <nav className="headerNav">
           <ul className="headerNavList">
             <li>
