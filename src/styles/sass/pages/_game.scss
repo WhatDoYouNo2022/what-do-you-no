@@ -2,11 +2,10 @@
 
 // Progress Bar
 
-.progress-bar {
+.progressBar {
   background: $clr-purple;
   width: 100%;
   height: 50px;
-  margin-top: 25px;
 
   ul {
     display: flex;
@@ -16,25 +15,26 @@
   }
 }
 
-.green-progress-icon {
+.greenProgressIcon {
   color: $clr-limeGreen;
 }
 
-.red-progress-icon {
+.redProgressIcon {
   color: $clr-red;
 }
 
-.white-progress-icon {
+.whiteProgressIcon {
   color: $clr-white;
 }
 
 // Score
-
 .score {
   text-align: center;
   background-color: $clr-purple;
   color: $clr-white;
   margin: 0;
+  margin-top: 5px;
+
   .scoreIcon {
     padding-right: 5px;
   }
@@ -45,19 +45,23 @@
   margin-top: 20px;
 }
 
+.definition {
+  height: 120px;
+}
+
 .wordType {
   display: block;
-  font-weight: bolder;
+  font-weight: 500;
 }
 
 .questionForm {
-  margin: 50px auto 10px auto;
+  margin: 20px auto 10px auto;
   border-top: 4px solid $clr-purple;
   border-bottom: 4px solid $clr-purple;
   border-right: 8px solid $clr-purple;
   border-left: 8px solid $clr-purple;
   background-color: $clr-white;
-  height: 200px;
+  height: 220px;
 
   input[type="radio"] {
     opacity: 0;
@@ -67,8 +71,16 @@
 
   label {
     cursor: pointer;
-    font-weight: bolder;
+    font-weight: $fw-bold;
     padding: 0 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
   }
 }
 
@@ -84,8 +96,8 @@ fieldset {
     border-right: 1px solid $clr-purple;
   }
 
-    .wordOneContainer,
-    .wordTwoContainer {
+  .wordOneContainer,
+  .wordTwoContainer {
     height: 100%;
     width: 100%;
     text-align: center;
@@ -98,5 +110,17 @@ fieldset {
     margin: 0;
     font-family: $ff-bookFont;
     font-weight: 400;
+    font-size: 0.7rem;
+    margin: 8px 0;
   }
+}
+
+.incorrectIcon {
+  padding-left: 5px;
+  color: $clr-red;
+}
+
+.correctIcon {
+  padding-left: 5px;
+  color: $clr-green;
 }

@@ -10,7 +10,7 @@ header {
     }
 
     .flexContainer {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     .headerNav {
         width: 100%;
@@ -52,9 +52,7 @@ header {
         }
     }
     .tabActive {
-        p {
-            color: $clr-limeGreen;
-        }
+        p,
         .aboutIcon,
         .leaderboardIcon {
             color: $clr-limeGreen;

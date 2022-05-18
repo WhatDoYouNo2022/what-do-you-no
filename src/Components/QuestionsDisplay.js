@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faCircleCheck, faCircleX } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronRight,
+  faCircleCheck,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons";
 
 const QuestionsDisplay = (props) => {
   const {
@@ -20,9 +24,7 @@ const QuestionsDisplay = (props) => {
     progressBarIconColourArray,
     setProgressBarIconColourArray,
     updatedIconsColourArray,
-    setModalIsOpen,
-    setModalTitle,
-    setModalMessage,
+    setAnswerCorrect,
   } = props;
 
   let homophone;
@@ -35,9 +37,9 @@ const QuestionsDisplay = (props) => {
       // checks to see if current index in array is equal to the question number user is currently on (since array index starts at zero and question number starts 1, check is for questionNumber - 1)
       if (index === questionNumber - 1) {
         if (answerType === "Incorrect") {
-          updatedIconsColourArray[index] = "red-progress-icon";
+          updatedIconsColourArray[index] = "redProgressIcon";
         } else if (answerType === "Correct") {
-          updatedIconsColourArray[index] = "green-progress-icon";
+          updatedIconsColourArray[index] = "greenProgressIcon";
         }
       }
       return updatedIconsColourArray;
@@ -57,11 +59,17 @@ const QuestionsDisplay = (props) => {
           return prevState + 1;
         });
         handleIconColourUpdate("Correct");
+        setAnswerCorrect((prevState) => {
+          return true;
+        });
       } else {
         handleIconColourUpdate("Incorrect");
+        setAnswerCorrect((prevState) => {
+          return false;
+        });
       }
       setScoreDenominator(scoreDenominator + 1);
-    }    
+    }
   };
 
   useEffect(() => {
@@ -94,7 +102,7 @@ const QuestionsDisplay = (props) => {
         return (
           <div key={index}>
             {evaluateWordType(item)}
-            <p>
+            <p className="definition">
               <span className="wordType">{wordType} </span>
               {definition}.
             </p>
@@ -105,9 +113,28 @@ const QuestionsDisplay = (props) => {
                 </legend>
                 <div className="wordOneContainer">
                   <label htmlFor="wordOne">
-                    <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
-                    {randomQuestionPosition === 1 ? randomWord : item.word}
-                    <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
+                    <p className="squigglyText" aria-hidden="true">
+                      Lorem lorem ipsum dolor sit amet consectetur
+                    </p>
+                    <div className="answerContainer">
+                      {randomQuestionPosition === 1 ? randomWord : item.word}
+                      {wordOneChecked ? (
+                        randomQuestionPosition === 1 ? (
+                          <FontAwesomeIcon
+                            icon={faCircleXmark}
+                            className="incorrectIcon"
+                          />
+                        ) : (
+                          <FontAwesomeIcon
+                            icon={faCircleCheck}
+                            className="correctIcon"
+                          />
+                        )
+                      ) : null}
+                    </div>
+                    <p className="squigglyText" aria-hidden="true">
+                      Lorem lorem ipsum dolor sit amet consectetur
+                    </p>
                   </label>
                   <input
                     type="radio"
@@ -122,12 +149,28 @@ const QuestionsDisplay = (props) => {
                 </div>
                 <div className="wordTwoContainer">
                   <label htmlFor="wordTwo">
-                    <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
-                    {randomQuestionPosition === 1 ? item.word : randomWord}
-                    {
-
-                    }
-                    <p className="squigglyText" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</p>
+                    <p className="squigglyText" aria-hidden="true">
+                      Lorem lorem ipsum dolor sit amet consectetur
+                    </p>
+                    <div className="answerContainer">
+                      {randomQuestionPosition === 1 ? item.word : randomWord}
+                      {wordTwoChecked ? (
+                        randomQuestionPosition === 1 ? (
+                          <FontAwesomeIcon
+                            icon={faCircleCheck}
+                            className="correctIcon"
+                          />
+                        ) : (
+                          <FontAwesomeIcon
+                            icon={faCircleXmark}
+                            className="incorrectIcon"
+                          />
+                        )
+                      ) : null}
+                    </div>
+                    <p className="squigglyText" aria-hidden="true">
+                      Lorem lorem ipsum dolor sit amet consectetur
+                    </p>
                   </label>
                   <input
                     type="radio"

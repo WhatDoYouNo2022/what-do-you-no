@@ -8,8 +8,7 @@ import { faBook, faBookOpen } from "@fortawesome/free-solid-svg-icons";
 import ModalWindow from "./ModalWindow";
 
 const Game = (props) => {
-
-  const { initialWords, updatedIconsColourArray } = props;
+  const { initialWords, updatedIconsColourArray, setGameIsStarted } = props;
 
   //store data from API
   const [data, setData] = useState([]);
@@ -35,6 +34,8 @@ const Game = (props) => {
 
   const [randomQuestionPosition, setRandomQuestionPosition] = useState(1);
 
+  const [answerCorrect, setAnswerCorrect] = useState("");
+
   // array to store initial progress bar icons
   const [progressBarIconArray, setProgressBarIconArray] = useState([
     faBookOpen,
@@ -51,16 +52,16 @@ const Game = (props) => {
 
   // array to store icon classes
   const [progressBarIconColourArray, setProgressBarIconColourArray] = useState([
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
-    "white-progress-icon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
+    "whiteProgressIcon",
   ]);
 
   //modal window state
@@ -76,6 +77,8 @@ const Game = (props) => {
 
   //store homophone generated from API
   let homophone;
+
+  let onFinalQuestion = false;
 
   //close modal window function
   const handleCloseModal = () => {
@@ -134,8 +137,10 @@ const Game = (props) => {
 
   const handleNextQuestion = () => {
     // check to see there are unused words remaining (game to continue)
-    console.log(initialWords);
     if (initialWords.length > 0) {
+      setAnswerCorrect((prevState) => {
+        return "";
+      });
       if (wordOneChecked || wordTwoChecked) {
         // randomly generates position index for correct answer location
         setRandomQuestionPosition((prevState) => {
@@ -179,7 +184,7 @@ const Game = (props) => {
   };
 
   const handleChange = (event) => {
-    // console.log(event.target);
+    return null;
   };
 
   return (
@@ -193,13 +198,13 @@ const Game = (props) => {
           handleCloseModal={handleCloseModal}
         />
       ) : null}
-      {isGameOver ? null :
+      {isGameOver ? null : (
         <ProgressBar
           questionNumber={questionNumber}
           progressBarIconArray={progressBarIconArray}
           progressBarIconColourArray={progressBarIconColourArray}
         />
-      }
+      )}
       <Score
         score={score}
         setScore={setScore}
@@ -213,6 +218,7 @@ const Game = (props) => {
           setModalIsOpen={setModalIsOpen}
           setModalMessage={setModalMessage}
           setModalTitle={setModalTitle}
+          setGameIsStarted={setGameIsStarted}
         />
       ) : (
         <QuestionsDisplay
@@ -234,9 +240,9 @@ const Game = (props) => {
           progressBarIconColourArray={progressBarIconColourArray}
           setProgressBarIconColourArray={setProgressBarIconColourArray}
           updatedIconsColourArray={updatedIconsColourArray}
-          setModalIsOpen={setModalIsOpen}
-          setModalMessage={setModalMessage}
-          setModalTitle={setModalTitle}
+          answerCorrect={answerCorrect}
+          setAnswerCorrect={setAnswerCorrect}
+          onFinalQuestion={onFinalQuestion}
         />
       )}
     </div>
